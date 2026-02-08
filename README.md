@@ -7,6 +7,7 @@ Landing page del sito **WhaleStreet**.
 ## Cosa c'è in questo progetto
 
 - **index.html** — Pagina principale del sito.
+- **aggiorna-profilo.html** — Pagina post-iscrizione newsletter per aggiornare (opzionalmente) i dati personali nel database email.
 - **docs/** — Guide per lavorare sul progetto (workflow, commit, dove cliccare).
 - **CHANGELOG.md** — Registro delle modifiche importanti al sito.
 

@@ -7,6 +7,10 @@ Formato: [Data] – Breve descrizione.
 
 ---
 
+## 2025-02-08
+
+- Aggiunta landing page `aggiorna-profilo.html` per aggiornamento opzionale dati personali (form Brevo). Pagina di post-iscrizione newsletter.
+
 ## 2025-02-06
 
 - Creata documentazione workflow e commit in `docs/` (WORKFLOW.md, COMMIT_GUIDE.md).
