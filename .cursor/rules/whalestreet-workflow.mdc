@@ -12,6 +12,7 @@ Progetto landing page (HTML/CSS/JS). Modifiche in Cursor → commit → push su 
 1. **Messaggio di commit:** dopo aver applicato modifiche, suggerisci sempre un messaggio di commit in italiano, chiaro e descrittivo (es. "Aggiungi logo WhaleStreet", "Aggiorna testo hero").
 2. **Un commit per modifica logica:** invita a fare commit piccoli e frequenti, uno per ogni cambiamento comprensibile.
 3. **Backup:** i commit sono i backup; non serve creare cartelle "backup" a mano. Ricorda all'utente che può fare commit prima di modifiche grosse per avere un punto di ripristino.
+4. **Commit e push:** dopo le modifiche, esegui sempre commit e push su GitHub (a meno che l'utente non chieda esplicitamente il contrario).
 
 ## Descrizioni
 - Preferisci risposte e messaggi in **italiano** se l'utente scrive in italiano.
