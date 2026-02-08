@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/conferma-iscrizione", "destination": "/conferma-iscrizione/index.html" },
-    { "source": "/aggiorna-profilo", "destination": "/aggiorna-profilo/index.html" }
+    { "source": "/aggiorna-profilo", "destination": "/aggiorna-profilo/index.html" },
+    { "source": "/arrivederci", "destination": "/arrivederci/index.html" }
   ]
 }
