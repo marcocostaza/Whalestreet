@@ -78,7 +78,7 @@
       <h1 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white mb-6 leading-tight">
         Conferma la tua iscrizione
       </h1>
-      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-white/10 text-left">
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-white/10 text-center">
         <p class="text-white/90 mb-4">
           Dobbiamo confermare il tuo indirizzo email per completare il processo di iscrizione.
         </p>
@@ -90,32 +90,19 @@
         </p>
       </div>
 
-      <!-- Suggerimenti utili -->
-      <div class="mt-8 space-y-6">
-        <p class="text-sm text-white/70">
+      <!-- Suggerimenti e unico link home -->
+      <div class="mt-8 space-y-6 flex flex-col items-center">
+        <p class="text-sm text-white/70 text-center">
           Non hai ricevuto l'email? Controlla la cartella <strong>Spam</strong> o <strong>Promozioni</strong>.
         </p>
-
-        <section class="text-center" aria-labelledby="apri-mail-heading">
-          <h2 id="apri-mail-heading" class="text-sm font-medium text-white/80 mb-3">Apri la tua posta</h2>
-          <a href="mailto:" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-accent hover:bg-accent-light text-white font-medium transition-colors shadow-glow-sm">
-            <i data-lucide="inbox" class="w-5 h-5" aria-hidden="true"></i>
-            Controlla la posta
+        <p class="text-sm text-white/60 text-center">
+          Hai sbagliato indirizzo?
+          <a href="/#newsletter" class="inline-flex items-center justify-center gap-1.5 text-accent hover:text-accent-light underline underline-offset-2 font-medium mt-2">
+            <i data-lucide="arrow-left" class="w-4 h-4 shrink-0" aria-hidden="true"></i>
+            Iscriviti di nuovo dalla home
           </a>
-        </section>
-
-        <p class="text-sm text-white/60">
-          Hai sbagliato indirizzo? <a href="/#newsletter" class="text-accent hover:text-accent-light underline underline-offset-2">Iscriviti di nuovo dalla home</a>.
         </p>
       </div>
-
-      <!-- Torna alla home -->
-      <footer class="mt-10">
-        <a href="/" class="inline-flex items-center gap-2 text-white/70 hover:text-accent transition-colors font-medium">
-          <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
-          Torna alla home
-        </a>
-      </footer>
     </div>
   </main>
 
