@@ -9,6 +9,7 @@ Formato: [Data] – Breve descrizione.
 
 ## 2025-02-08
 
+- Aggiunta pagina **Conferma iscrizione** (`/conferma-iscrizione`) da mostrare dopo l’iscrizione alla newsletter: avviso di conferma email, suggerimento spam/promozioni, pulsanti per aprire Gmail/Outlook/Yahoo/iCloud, link per tornare alla home e per iscriversi di nuovo.
 - Sostituita sezione "Contattaci" in home con form newsletter Brevo. Aggiunto ancoraggio `/#newsletter` e link "Iscriviti alla newsletter" in hero.
 - Aggiunta landing page `/aggiorna-profilo` per aggiornamento opzionale dati personali (form Brevo). Pagina di post-iscrizione newsletter. Altezza form aumentata per visibilità completa.
 
