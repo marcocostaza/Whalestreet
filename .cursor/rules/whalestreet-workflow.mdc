@@ -17,6 +17,10 @@ Progetto landing page (HTML/CSS/JS). Modifiche in Cursor → commit → push su 
 - Preferisci risposte e messaggi in **italiano** se l'utente scrive in italiano.
 - Le guide del progetto sono in `docs/` (WORKFLOW.md, COMMIT_GUIDE.md); puoi citarle quando spieghi i passi (commit, push, dove cliccare).
 
+## URL e link
+- **Nessun `.html` nei link:** usa sempre URL puliti senza estensione. Struttura: `nome-pagina/index.html` → URL `/nome-pagina`. Mai link a `pagina.html`.
+- Esempi: `/aggiorna-profilo` ✅ — `aggiorna-profilo.html` ❌
+
 ## Changelog
 - Per modifiche rilevanti (nuove sezioni, cambio struttura, contenuti importanti), suggerisci di aggiornare `CHANGELOG.md` con data e breve descrizione.
 
