@@ -65,7 +65,7 @@ const quarters = [
 
 export default function RoadmapPage() {
   return (
-    <div className="min-h-screen bg-background-light">
+    <div className="min-h-screen bg-background-light dark:bg-background-dark">
       {/* Hero */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -73,7 +73,7 @@ export default function RoadmapPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 text-text-primary"
+            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 text-text-primary dark:text-text-dark"
           >
             Roadmap 2026
           </motion.h1>
@@ -81,7 +81,7 @@ export default function RoadmapPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl text-text-primary/70"
+            className="text-xl text-text-primary/70 dark:text-text-dark/70"
           >
             Il percorso di crescita di WhaleStreet attraverso i quattro trimestri del 2026
           </motion.p>
@@ -93,7 +93,7 @@ export default function RoadmapPage() {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border dark:bg-border hidden md:block" />
 
             {/* Quarters */}
             {quarters.map((quarter, index) => {
@@ -112,7 +112,7 @@ export default function RoadmapPage() {
                   {/* Timeline Dot */}
                   <div className="absolute left-0 md:left-8 top-6 -translate-x-1/2 md:translate-x-0">
                     <div
-                      className={`w-4 h-4 rounded-full border-4 border-background-light ${
+                      className={`w-4 h-4 rounded-full border-4 border-background-light dark:border-background-dark ${
                         quarter.color === "primary"
                           ? "bg-primary"
                           : quarter.color === "accent"
@@ -127,14 +127,14 @@ export default function RoadmapPage() {
                   {/* Card */}
                   <div className={`ml-12 md:ml-24 ${isEven ? "md:mr-0" : "md:ml-0 md:mr-24"}`}>
                     <Card
-                      className={`border-2 ${
+                      className={`border-2 bg-card dark:bg-card ${
                         quarter.color === "primary"
-                          ? "border-primary/30"
+                          ? "border-primary/30 dark:border-primary/40"
                           : quarter.color === "accent"
-                          ? "border-accent/30"
+                          ? "border-accent/30 dark:border-accent/40"
                           : quarter.color === "secondary"
-                          ? "border-secondary/30"
-                          : "border-accent-purple/30"
+                          ? "border-secondary/30 dark:border-secondary/40"
+                          : "border-accent-purple/30 dark:border-accent-purple/40"
                       }`}
                     >
                       <CardHeader>
@@ -142,22 +142,22 @@ export default function RoadmapPage() {
                           <div
                             className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${
                               quarter.color === "primary"
-                                ? "bg-primary/10"
+                                ? "bg-primary/10 dark:bg-primary/20"
                                 : quarter.color === "accent"
-                                ? "bg-accent/10"
+                                ? "bg-accent/10 dark:bg-accent/20"
                                 : quarter.color === "secondary"
-                                ? "bg-secondary/10"
-                                : "bg-accent-purple/10"
+                                ? "bg-secondary/10 dark:bg-secondary/20"
+                                : "bg-accent-purple/10 dark:bg-accent-purple/20"
                             }`}
                           >
                             <Icon
                               className={`w-6 h-6 ${
                                 quarter.color === "primary"
-                                  ? "text-primary"
+                                  ? "text-primary dark:text-accent"
                                   : quarter.color === "accent"
                                   ? "text-accent"
                                   : quarter.color === "secondary"
-                                  ? "text-secondary"
+                                  ? "text-secondary dark:text-accent-purple"
                                   : "text-accent-purple"
                               }`}
                             />
@@ -167,24 +167,24 @@ export default function RoadmapPage() {
                               <span
                                 className={`text-sm font-semibold uppercase ${
                                   quarter.color === "primary"
-                                    ? "text-primary"
+                                    ? "text-primary dark:text-accent"
                                     : quarter.color === "accent"
                                     ? "text-accent"
                                     : quarter.color === "secondary"
-                                    ? "text-secondary"
+                                    ? "text-secondary dark:text-accent-purple"
                                     : "text-accent-purple"
                                 }`}
                               >
                                 {quarter.id.toUpperCase()}
                               </span>
-                              <span className="text-sm text-text-primary/60">
+                              <span className="text-sm text-text-primary/60 dark:text-text-dark/60">
                                 {quarter.period}
                               </span>
                             </div>
-                            <CardTitle className="text-xl font-heading mb-2">
+                            <CardTitle className="text-xl font-heading mb-2 text-foreground dark:text-foreground">
                               {quarter.title}
                             </CardTitle>
-                            <CardDescription className="text-base font-medium">
+                            <CardDescription className="text-base font-medium text-muted-foreground dark:text-muted-foreground">
                               {quarter.objective}
                             </CardDescription>
                           </div>
@@ -197,15 +197,15 @@ export default function RoadmapPage() {
                               <CheckCircle2
                                 className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
                                   quarter.color === "primary"
-                                    ? "text-primary"
+                                    ? "text-primary dark:text-accent"
                                     : quarter.color === "accent"
                                     ? "text-accent"
                                     : quarter.color === "secondary"
-                                    ? "text-secondary"
+                                    ? "text-secondary dark:text-accent-purple"
                                     : "text-accent-purple"
                                 }`}
                               />
-                              <span className="text-sm text-text-primary/70 leading-relaxed">
+                              <span className="text-sm text-text-primary/70 dark:text-text-dark/70 leading-relaxed">
                                 {milestone}
                               </span>
                             </li>

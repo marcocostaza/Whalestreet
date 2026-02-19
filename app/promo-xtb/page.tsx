@@ -48,9 +48,9 @@ const steps = [
 
 export default function PromoXTBPage() {
   return (
-    <div className="min-h-screen bg-background-light">
+    <div className="min-h-screen bg-background-light dark:bg-background-dark">
       {/* Hero */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background-light to-background-light-alt">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background-light to-background-light-alt dark:from-background-dark dark:to-background-dark-alt">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export default function PromoXTBPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 dark:bg-accent/20 mb-6">
               <Gift className="w-10 h-10 text-accent" />
             </div>
           </motion.div>
@@ -67,7 +67,7 @@ export default function PromoXTBPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 text-text-primary"
+            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 text-text-primary dark:text-text-dark"
           >
             Ottieni 1 Mese di Whale Academy Gratis
           </motion.h1>
@@ -76,7 +76,7 @@ export default function PromoXTBPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-text-primary/70 mb-8 max-w-2xl mx-auto"
+            className="text-xl text-text-primary/70 dark:text-text-dark/70 mb-8 max-w-2xl mx-auto"
           >
             Apri un conto su XTB tramite il nostro link partner, deposita il minimo richiesto e
             ottieni l&apos;accesso gratuito al primo mese di Academy. Dopo il mese gratuito,
@@ -93,7 +93,7 @@ export default function PromoXTBPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary"
+            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary dark:text-text-dark"
           >
             Come Funziona
           </motion.h2>
@@ -109,22 +109,22 @@ export default function PromoXTBPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="border-2 border-accent/20 hover:border-accent/40 transition-colors">
+                  <Card className="border-2 border-accent/20 dark:border-accent/30 hover:border-accent/40 dark:hover:border-accent/50 transition-colors bg-card dark:bg-card">
                     <CardContent className="pt-6">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                          <div className="w-12 h-12 rounded-lg bg-accent/10 dark:bg-accent/20 flex items-center justify-center">
                             <span className="text-lg font-bold text-accent">{step.number}</span>
                           </div>
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2">
                             <Icon className="w-5 h-5 text-accent" />
-                            <h3 className="text-lg font-heading font-semibold text-text-primary">
+                            <h3 className="text-lg font-heading font-semibold text-text-primary dark:text-text-dark">
                               {step.title}
                             </h3>
                           </div>
-                          <p className="text-sm text-text-primary/70">{step.description}</p>
+                          <p className="text-sm text-text-primary/70 dark:text-text-dark/70">{step.description}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -137,7 +137,7 @@ export default function PromoXTBPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light-alt">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light-alt dark:bg-background-dark-alt">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -145,10 +145,10 @@ export default function PromoXTBPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-6 text-text-primary">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-6 text-text-primary dark:text-text-dark">
               Pronto a Iniziare?
             </h2>
-            <p className="text-lg text-text-primary/70 mb-8">
+            <p className="text-lg text-text-primary/70 dark:text-text-dark/70 mb-8">
               Clicca sul pulsante qui sotto per aprire il tuo conto XTB e iniziare il processo.
             </p>
             <Button variant="accent" size="lg" className="mb-8" asChild>
@@ -173,12 +173,12 @@ export default function PromoXTBPage() {
       {/* Form Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <Card className="border-2 border-accent/30">
+          <Card className="border-2 border-accent/30 dark:border-accent/40 bg-card dark:bg-card">
             <CardHeader>
-              <CardTitle className="text-xl font-heading text-center">
+              <CardTitle className="text-xl font-heading text-center text-foreground dark:text-foreground">
                 Invia Prova Deposito
               </CardTitle>
-              <CardDescription className="text-center">
+              <CardDescription className="text-center text-muted-foreground dark:text-muted-foreground">
                 Dopo aver completato i passaggi precedenti, compila questo form per inviare la
                 prova del deposito e sbloccare il mese gratuito.
               </CardDescription>
@@ -188,7 +188,7 @@ export default function PromoXTBPage() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-text-primary mb-2"
+                    className="block text-sm font-medium text-text-primary dark:text-text-dark mb-2"
                   >
                     Email
                   </label>
@@ -197,14 +197,14 @@ export default function PromoXTBPage() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-2 border border-border dark:border-border bg-background dark:bg-background text-foreground dark:text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="la.tua@email.com"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="nome"
-                    className="block text-sm font-medium text-text-primary mb-2"
+                    className="block text-sm font-medium text-text-primary dark:text-text-dark mb-2"
                   >
                     Nome e Cognome
                   </label>
@@ -213,14 +213,14 @@ export default function PromoXTBPage() {
                     id="nome"
                     name="nome"
                     required
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-2 border border-border dark:border-border bg-background dark:bg-background text-foreground dark:text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="Mario Rossi"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="file"
-                    className="block text-sm font-medium text-text-primary mb-2"
+                    className="block text-sm font-medium text-text-primary dark:text-text-dark mb-2"
                   >
                     Prova Deposito (Screenshot o PDF)
                   </label>
@@ -230,7 +230,7 @@ export default function PromoXTBPage() {
                     name="file"
                     accept="image/*,.pdf"
                     required
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-2 border border-border dark:border-border bg-background dark:bg-background text-foreground dark:text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                   />
                 </div>
                 <Button type="submit" variant="accent" className="w-full">
@@ -244,14 +244,14 @@ export default function PromoXTBPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light dark:bg-background-dark">
         <div className="max-w-3xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary"
+            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary dark:text-text-dark"
           >
             Domande Frequenti
           </motion.h2>
@@ -282,12 +282,12 @@ export default function PromoXTBPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card>
+                <Card className="bg-card dark:bg-card">
                   <CardHeader>
-                    <CardTitle className="text-lg font-heading">{faq.q}</CardTitle>
+                    <CardTitle className="text-lg font-heading text-foreground dark:text-foreground">{faq.q}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base">{faq.a}</CardDescription>
+                    <CardDescription className="text-base text-muted-foreground dark:text-muted-foreground">{faq.a}</CardDescription>
                   </CardContent>
                 </Card>
               </motion.div>

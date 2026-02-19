@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function ReportGratuitoPage() {
   return (
-    <div className="min-h-screen bg-background-light">
+    <div className="min-h-screen bg-background-light dark:bg-background-dark">
       {/* Hero */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -18,7 +18,7 @@ export default function ReportGratuitoPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 dark:bg-accent/20 mb-6">
               <FileText className="w-10 h-10 text-accent" />
             </div>
           </motion.div>
@@ -27,7 +27,7 @@ export default function ReportGratuitoPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 text-text-primary"
+            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 text-text-primary dark:text-text-dark"
           >
             Report Gratuito: Whale Watch
           </motion.h1>
@@ -36,7 +36,7 @@ export default function ReportGratuitoPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-text-primary/70 mb-8 max-w-2xl mx-auto"
+            className="text-xl text-text-primary/70 dark:text-text-dark/70 mb-8 max-w-2xl mx-auto"
           >
             Ricevi analisi complete su Bitcoin e Crypto: tecnica, fondamentale e on-chain. Tutto
             quello che ti serve per muoverti nel mercato nelle prossime settimane.
@@ -60,10 +60,10 @@ export default function ReportGratuitoPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="text-center border-2 border-primary/20">
+                <Card className="text-center border-2 border-primary/20 dark:border-primary/30 bg-card dark:bg-card">
                   <CardContent className="pt-6">
-                    <CheckCircle2 className="w-8 h-8 text-primary mx-auto mb-3" />
-                    <p className="text-sm font-semibold text-text-primary">{feature}</p>
+                    <CheckCircle2 className="w-8 h-8 text-primary dark:text-accent mx-auto mb-3" />
+                    <p className="text-sm font-semibold text-text-primary dark:text-text-dark">{feature}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -75,7 +75,7 @@ export default function ReportGratuitoPage() {
       {/* Form Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <Card className="border-2 border-accent/30">
+          <Card className="border-2 border-accent/30 dark:border-accent/40 bg-card dark:bg-card">
             <CardContent className="pt-8">
               {/* Mock-up Report */}
               <motion.div
@@ -85,11 +85,11 @@ export default function ReportGratuitoPage() {
                 transition={{ duration: 0.6 }}
                 className="mb-8"
               >
-                <div className="relative aspect-[3/4] bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg border-2 border-primary/20 flex items-center justify-center">
+                <div className="relative aspect-[3/4] bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-lg border-2 border-primary/20 dark:border-primary/30 flex items-center justify-center">
                   <div className="text-center p-8">
-                    <FileText className="w-16 h-16 text-primary/50 mx-auto mb-4" />
-                    <p className="text-text-primary/50 font-semibold">Report Whale Watch</p>
-                    <p className="text-sm text-text-primary/40 mt-2">
+                    <FileText className="w-16 h-16 text-primary/50 dark:text-accent/50 mx-auto mb-4" />
+                    <p className="text-text-primary/50 dark:text-text-dark/50 font-semibold">Report Whale Watch</p>
+                    <p className="text-sm text-text-primary/40 dark:text-text-dark/40 mt-2">
                       Anteprima visiva del report
                     </p>
                   </div>
