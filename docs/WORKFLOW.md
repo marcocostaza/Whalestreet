@@ -42,6 +42,18 @@ Guida semplice al flusso che usi per aggiornare il sito: **modifiche in Cursor �
 ### ✅ Un push = un deploy su Vercel
 - Ogni volta che fai push su GitHub, Vercel ricostruisce e aggiorna il sito. Non serve fare nulla su Vercel.
 
+### ✅ URL preview fissa per branch
+- **Problema:** ogni deployment ha una URL diversa (es. `whalestreet-DB6EJU8CQ-...vercel.app`), quindi devi cercare la nuova URL ogni volta.
+- **Soluzione:** Vercel genera automaticamente una **URL fissa per branch** che punta sempre all'ultimo deployment di quel branch.
+- **Come trovarla:**
+  1. Vai su Vercel → progetto "whalestreet" → **Overview**
+  2. Cerca la sezione "Preview Deployments" o vai su **Deployments** → filtra per branch "editing"
+  3. La URL del branch ha il formato: `https://whalestreet-git-editing-marco-costanzas-projects.vercel.app`
+  4. **Questa URL non cambia mai** quando fai nuovi commit, ma punta sempre all'ultimo deployment del branch
+- **Differenza:**
+  - **URL branch:** `whalestreet-git-editing-...vercel.app` → sempre aggiornata all'ultimo commit
+  - **URL deployment:** `whalestreet-DB6EJU8CQ-...vercel.app` → punta a un commit specifico
+
 ---
 
 ## Come evitare errori
