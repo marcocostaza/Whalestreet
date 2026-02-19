@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="it" className={`${montserrat.variable} ${inter.variable} dark`}>
       <head>
         <link
           rel="stylesheet"

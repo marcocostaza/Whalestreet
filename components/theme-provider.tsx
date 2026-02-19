@@ -14,22 +14,23 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 // Default context value per SSR
 const defaultContextValue: ThemeContextType = {
-  theme: "light",
+  theme: "dark",
   setTheme: () => {},
   toggleTheme: () => {},
 };
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    // Leggi il tema salvato o usa la preferenza del sistema
+    // Leggi il tema salvato o usa dark mode come default (come il sito ufficiale)
     const savedTheme = localStorage.getItem("theme") as Theme | null;
+    // Default a dark mode per allinearsi al sito ufficiale
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
-      : "light";
+      : "dark"; // Forza dark come default invece di seguire la preferenza di sistema
     const initialTheme = savedTheme || systemTheme;
     setTheme(initialTheme);
     applyTheme(initialTheme);
