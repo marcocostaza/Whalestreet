@@ -60,7 +60,7 @@ export default function Navbar() {
                 <Link href="/report-gratuito">Report Gratuito</Link>
               </Button>
               <Button variant="accent" size="sm" asChild>
-                <Link href="/promo-xtb">Promo XTB</Link>
+                <Link href="/promo-xtb">1 mese gratuito</Link>
               </Button>
               <ThemeToggle />
             </div>
@@ -115,7 +115,7 @@ export default function Navbar() {
                 </Button>
                 <Button variant="accent" size="sm" className="w-full" asChild>
                   <Link href="/promo-xtb" onClick={() => setIsOpen(false)}>
-                    Promo XTB
+                    1 mese gratuito
                   </Link>
                 </Button>
               </div>
