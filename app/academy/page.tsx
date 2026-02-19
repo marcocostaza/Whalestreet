@@ -1,0 +1,396 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  GraduationCap,
+  FileText,
+  MessageSquare,
+  Users,
+  BookOpen,
+  Sparkles,
+  Bot,
+  Calculator,
+  Video,
+  CheckCircle2,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
+
+export default function AcademyPage() {
+  return (
+    <div className="min-h-screen">
+      {/* Hero */}
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background-light to-background-light-alt">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 text-text-primary"
+          >
+            Whale Academy
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-xl text-text-primary/70 mb-8"
+          >
+            Formazione Crypto Potenziata dall&apos;Intelligenza Artificiale
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-text-primary/60 max-w-2xl mx-auto"
+          >
+            Un&apos;accademia ad abbonamento annuale che combina supporto umano costante e
+            tecnologie AI per un percorso formativo personalizzato e interattivo.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Servizi Inclusi */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary"
+          >
+            Cosa è incluso nell&apos;Academy
+          </motion.h2>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: GraduationCap,
+                title: "Lezione Teorica Mensile",
+                description:
+                  "60 minuti al mese con Marco su finanza personale, gestione del rischio, analisi tecnica. Con slide, quiz e documentazione.",
+              },
+              {
+                icon: FileText,
+                title: "Report Mensile",
+                description:
+                  "Analisi completa di Mattia (tecnica, fondamentale, on-chain) per muoverti nel mercato crypto. Disponibile in versione scritta e video.",
+              },
+              {
+                icon: MessageSquare,
+                title: "Q&A Mensile",
+                description:
+                  "Sessione di 30-60 minuti con Marco e Mattia per risolvere problemi e rispondere alle domande su temi evergreen e attualità.",
+              },
+              {
+                icon: Users,
+                title: "Chat Telegram 24/7",
+                description:
+                  "Supporto costante tramite chat dove gli studenti si confrontano tra loro e con noi in tempo reale.",
+              },
+              {
+                icon: BookOpen,
+                title: "Accesso Materiali Storici",
+                description:
+                  "Tutte le lezioni, analisi e strumenti operativi condivisi nei mesi precedenti. Archivio completo sempre disponibile.",
+              },
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:border-primary/50 transition-colors">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                      <service.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg font-heading">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-sm leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI Tools */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light-alt">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-4">
+              <Sparkles className="w-5 h-5 text-secondary" />
+              <span className="text-sm font-semibold text-secondary">AI Powered</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-text-primary">
+              Strumenti AI Personalizzati
+            </h2>
+            <p className="text-lg text-text-primary/70 max-w-2xl mx-auto">
+              La nostra proposta formativa si differenzia per la presenza di supporti AI che
+              rendono lo studio più interattivo rispetto al classico &quot;video-corso&quot;.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              {
+                icon: Calculator,
+                title: "Applicativi Personalizzati",
+                description:
+                  "Piani di trading, risparmio e spesa creati su misura per ogni studente in base alle sue necessità specifiche.",
+                color: "secondary",
+              },
+              {
+                icon: Bot,
+                title: "ChatBOT e Piattaforme di Studio",
+                description:
+                  "Sistemi basati sulle nostre fonti che insegnano e creano contenuti multimediali in tempo reale (slide, video, podcast).",
+                color: "secondary",
+              },
+              {
+                icon: Video,
+                title: "NotebookLM Integration",
+                description:
+                  "Chatbot che integra le nostre fonti e genera podcast e video riassuntivi dei singoli temi trattati.",
+                color: "accent-purple",
+              },
+              {
+                icon: Sparkles,
+                title: "Piattaforma Proprietaria (Futuro)",
+                description:
+                  "Lo studente creerà il materiale didattico che preferisce. Forniremo le fonti affidabili e applicativi on-demand.",
+                color: "accent-purple",
+              },
+            ].map((tool, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card
+                  className={`h-full border-2 ${
+                    tool.color === "secondary"
+                      ? "border-secondary/30 hover:border-secondary/50"
+                      : "border-accent-purple/30 hover:border-accent-purple/50"
+                  } transition-colors`}
+                >
+                  <CardHeader>
+                    <div
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
+                        tool.color === "secondary"
+                          ? "bg-secondary/10"
+                          : "bg-accent-purple/10"
+                      }`}
+                    >
+                      <tool.icon
+                        className={`w-6 h-6 ${
+                          tool.color === "secondary" ? "text-secondary" : "text-accent-purple"
+                        }`}
+                      />
+                    </div>
+                    <CardTitle className="text-lg font-heading">{tool.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-sm leading-relaxed">
+                      {tool.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Modalità di Accesso */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light">
+        <div className="max-w-4xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary"
+          >
+            Come Accedere all&apos;Academy
+          </motion.h2>
+
+          <div className="grid sm:grid-cols-2 gap-8">
+            {/* Opzione 1: Pagamento Standard */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="h-full border-2 border-primary/30">
+                <CardHeader>
+                  <CardTitle className="text-xl font-heading">Abbonamento Annuale</CardTitle>
+                  <CardDescription className="text-lg font-semibold text-primary mt-2">
+                    500€/anno
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-text-primary/70">
+                        Accesso immediato a tutti i servizi
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-text-primary/70">
+                        Materiali storici inclusi
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-text-primary/70">
+                        Supporto AI completo
+                      </span>
+                    </li>
+                  </ul>
+                  <Button variant="default" className="w-full mt-6" asChild>
+                    <Link href="#">
+                      Iscriviti Ora
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Opzione 2: 1 Mese Gratis XTB */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="h-full border-2 border-accent/30">
+                <CardHeader>
+                  <CardTitle className="text-xl font-heading">1 Mese Gratis</CardTitle>
+                  <CardDescription className="text-lg font-semibold text-accent mt-2">
+                    Tramite Partner XTB
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-text-primary/70 mb-4">
+                    Sblocca il primo mese di Academy gratuitamente aprendo un conto tramite il nostro
+                    partner XTB.
+                  </p>
+                  <ol className="space-y-2 mb-6">
+                    <li className="flex items-start gap-2 text-sm text-text-primary/70">
+                      <span className="font-semibold text-accent">1.</span>
+                      <span>Apri conto XTB tramite link affiliato</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-text-primary/70">
+                      <span className="font-semibold text-accent">2.</span>
+                      <span>Deposita minimo 400€</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-text-primary/70">
+                      <span className="font-semibold text-accent">3.</span>
+                      <span>Esegui prima operazione (FX/IND/CMD)</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-text-primary/70">
+                      <span className="font-semibold text-accent">4.</span>
+                      <span>Invia prova deposito tramite form</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-text-primary/70">
+                      <span className="font-semibold text-accent">5.</span>
+                      <span>Sblocco automatico mese gratuito</span>
+                    </li>
+                  </ol>
+                  <Button variant="accent" className="w-full" asChild>
+                    <Link href="/promo-xtb">
+                      Ottieni 1 Mese Gratis
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tabella Prezzi */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light-alt">
+        <div className="max-w-4xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary"
+          >
+            Prezzi
+          </motion.h2>
+
+          <Card className="border-2 border-primary/30">
+            <CardHeader>
+              <CardTitle className="text-2xl font-heading text-center">
+                Whale Academy
+              </CardTitle>
+              <div className="text-center mt-4">
+                <span className="text-4xl font-bold text-primary">500€</span>
+                <span className="text-text-primary/70 ml-2">/anno</span>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between py-3 border-b border-border">
+                  <span className="text-text-primary">Abbonamento Annuale</span>
+                  <span className="font-semibold text-text-primary">500€</span>
+                </div>
+                <div className="flex items-center justify-between py-3 border-b border-border">
+                  <span className="text-text-primary">1 Mese Gratis (XTB)</span>
+                  <span className="font-semibold text-accent">Gratis</span>
+                </div>
+                <div className="pt-4">
+                  <p className="text-sm text-text-primary/70 mb-4">
+                    * Dopo il mese gratuito, l&apos;abbonamento continuerà al prezzo standard di
+                    500€/anno se non disdetti.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button variant="default" className="flex-1" asChild>
+                      <Link href="#">
+                        Acquista Abbonamento
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button variant="accent" className="flex-1" asChild>
+                      <Link href="/promo-xtb">
+                        Prova Gratis 1 Mese
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+    </div>
+  );
+}

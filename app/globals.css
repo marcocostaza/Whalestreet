@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    
+    /* Shadcn UI variables */
+    --background: 244 248 251; /* #F4F8FB */
+    --foreground: 33 33 33; /* #212121 */
+    --card: 255 255 255;
+    --card-foreground: 33 33 33;
+    --popover: 255 255 255;
+    --popover-foreground: 33 33 33;
+    --primary: 70 111 157; /* #466F9D Whale Street Blue */
+    --primary-foreground: 255 255 255;
+    --secondary: 82 62 178; /* #523EB2 Royal Anchor */
+    --secondary-foreground: 255 255 255;
+    --muted: 244 248 251;
+    --muted-foreground: 131 144 164;
+    --accent: 59 149 217; /* #3B95D9 Biolume Blue */
+    --accent-foreground: 255 255 255;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 220 233 242; /* #DCE9F2 */
+    --input: 220 233 242;
+    --ring: 59 149 217;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border/20;
+  }
+
+  body {
+    @apply bg-background-light text-text-primary font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glow-effect {
+    @apply transition-shadow duration-300;
+  }
+  
+  .glow-effect:hover {
+    @apply shadow-glow;
+  }
+}
