@@ -48,8 +48,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className={`${montserrat.variable} ${inter.variable} dark`}>
+    <html lang="it" className={`${montserrat.variable} ${inter.variable}`}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const savedTheme = localStorage.getItem('theme');
+                const theme = savedTheme || 'dark';
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
         <link
           rel="stylesheet"
           href="https://sibforms.com/forms/end-form/build/sib-styles.css"
