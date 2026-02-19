@@ -1,0 +1,86 @@
+# Requisito Dark Mode — WhaleStreet
+
+## Regola Fondamentale
+
+**Ogni nuova pagina, componente o integrazione DEVE essere compatibile con il cambio di tema (dark/light mode).**
+
+## Requisiti Obbligatori
+
+### 1. Nuove Pagine (`app/**/page.tsx`)
+Quando crei una nuova pagina, assicurati di:
+- Applicare classi `dark:` per tutti gli sfondi: `bg-background-light dark:bg-background-dark`
+- Applicare classi `dark:` per tutti i testi: `text-text-primary dark:text-text-dark`
+- Usare varianti dark per testi con opacità: `text-text-primary/70 dark:text-text-dark/70`
+- Applicare classi dark per i gradienti: `from-background-light dark:from-background-dark`
+- Applicare classi dark per i bordi: `border-border dark:border-border`
+
+### 2. Nuovi Componenti (`components/**/*.tsx`)
+Quando crei un nuovo componente:
+- Usa sempre le variabili CSS di Shadcn UI (`bg-card`, `text-foreground`, `text-muted-foreground`) che si adattano automaticamente
+- Se usi colori custom, aggiungi sempre la variante dark: `bg-primary/10 dark:bg-primary/20`
+- Per le Card, usa sempre: `bg-card dark:bg-card` e `text-foreground dark:text-foreground`
+- Per i testi descrittivi: `text-muted-foreground dark:text-muted-foreground`
+
+### 3. Integrazioni e Form
+Quando integri form esterni (es. Brevo):
+- Assicurati che gli input abbiano classi dark: `bg-background dark:bg-background text-foreground dark:text-foreground`
+- I placeholder devono essere leggibili in entrambi i temi
+- I bordi dei form devono avere: `border-border dark:border-border`
+
+### 4. Immagini e Logo
+- Se usi logo diversi per light/dark mode:
+  - Logo light: aggiungi classe `dark:hidden`
+  - Logo dark: aggiungi classe `hidden dark:block`
+- Esempio:
+  ```tsx
+  <Image src="/logo-colored.png" className="dark:hidden" />
+  <Image src="/logo-white.png" className="hidden dark:block" />
+  ```
+
+## Pattern Standard da Seguire
+
+### Sezione Standard
+```tsx
+<section className="py-20 px-4 bg-background-light dark:bg-background-dark">
+  <h2 className="text-text-primary dark:text-text-dark">Titolo</h2>
+  <p className="text-text-primary/70 dark:text-text-dark/70">Testo</p>
+</section>
+```
+
+### Card Standard
+```tsx
+<Card className="bg-card dark:bg-card">
+  <CardHeader>
+    <CardTitle className="text-foreground dark:text-foreground">Titolo</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <CardDescription className="text-muted-foreground dark:text-muted-foreground">
+      Descrizione
+    </CardDescription>
+  </CardContent>
+</Card>
+```
+
+### Bottone Standard
+I componenti Button di Shadcn UI si adattano automaticamente, ma se aggiungi classi custom:
+```tsx
+<Button className="bg-accent hover:bg-accent/90 dark:bg-accent dark:hover:bg-accent/90">
+  Testo
+</Button>
+```
+
+## Checklist Pre-Commit
+
+Prima di committare una nuova pagina/componente, verifica:
+- [ ] Tutti gli sfondi hanno varianti `dark:`
+- [ ] Tutti i testi hanno varianti `dark:`
+- [ ] Le Card usano `bg-card dark:bg-card`
+- [ ] I form hanno classi dark per input e bordi
+- [ ] I logo/immagini sono gestiti correttamente per dark mode
+- [ ] Il componente è testato visivamente in entrambi i temi
+
+## Riferimenti
+
+- Design System: vedi `tailwind.config.ts` per i colori dark mode
+- Variabili CSS: vedi `app/globals.css` per le variabili Shadcn UI dark mode
+- Esempi: vedi `app/page.tsx`, `app/academy/page.tsx` per pattern completi
