@@ -3,6 +3,7 @@ import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -56,9 +57,11 @@ export default function RootLayout({
         <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
       </head>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
         <script
           dangerouslySetInnerHTML={{
             __html: `

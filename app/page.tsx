@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-background-light to-background-light-alt">
+      <section className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-background-light to-background-light-alt dark:from-background-dark dark:to-background-dark-alt">
         {/* Glow effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute top-1/3 -left-32 w-64 h-64 bg-accent/15 rounded-full blur-[80px] pointer-events-none" />
@@ -29,7 +29,15 @@ export default function Home() {
               alt="WhaleStreet – Logo del brand"
               width={320}
               height={200}
-              className="w-full max-w-xs mx-auto object-contain"
+              className="w-full max-w-xs mx-auto object-contain dark:hidden"
+              priority
+            />
+            <Image
+              src="/images/WhaleStreet_Logo_White.png"
+              alt="WhaleStreet – Logo del brand"
+              width={320}
+              height={200}
+              className="w-full max-w-xs mx-auto object-contain hidden dark:block"
               priority
             />
           </motion.div>
@@ -38,7 +46,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-text-primary mb-6 leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-text-primary dark:text-text-dark mb-6 leading-tight"
           >
             WhaleStreet: Il Tuo Faro nella Navigazione Verso l&apos;Indipendenza Finanziaria
           </motion.h1>
@@ -47,7 +55,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-text-primary/80 max-w-2xl mx-auto mb-10"
+            className="text-lg sm:text-xl text-text-primary/80 dark:text-text-dark/80 max-w-2xl mx-auto mb-10"
           >
             Formazione avanzata su Bitcoin e Crypto potenziata dall&apos;Intelligenza Artificiale.
             Inizia il tuo percorso di crescita attraverso una rotta guidata.
@@ -73,14 +81,14 @@ export default function Home() {
       </section>
 
       {/* I due Pilastri */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light dark:bg-background-dark">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary"
+            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary dark:text-text-dark"
           >
             I due Pilastri
           </motion.h2>
@@ -92,15 +100,15 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="h-full border-2 hover:border-primary/50 transition-colors">
+              <Card className="h-full border-2 hover:border-primary/50 dark:hover:border-primary/70 transition-colors bg-card dark:bg-card">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <Users className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-4">
+                    <Users className="w-7 h-7 text-primary dark:text-accent" />
                   </div>
-                  <CardTitle className="text-xl font-heading">Supporto Umano</CardTitle>
+                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">Supporto Umano</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
+                  <CardDescription className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
                     Supporto presente e costante attraverso chat, live ed eventi che forniscono
                     assistenza diretta allo studente. Un contatto stretto con la community tramite
                     live e canali Telegram per risolvere problemi e rispondere alle domande.
@@ -115,15 +123,15 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="h-full border-2 hover:border-secondary/50 transition-colors">
+              <Card className="h-full border-2 hover:border-secondary/50 dark:hover:border-secondary/70 transition-colors bg-card dark:bg-card">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
-                    <Brain className="w-7 h-7 text-secondary" />
+                  <div className="w-14 h-14 rounded-xl bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center mb-4">
+                    <Brain className="w-7 h-7 text-secondary dark:text-accent-purple" />
                   </div>
-                  <CardTitle className="text-xl font-heading">Formazione AI</CardTitle>
+                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">Formazione AI</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
+                  <CardDescription className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
                     Eliminiamo il classico &quot;videocorso registrato&quot; con strumenti di formazione
                     personalizzata. Creazione di contenuti testuali, audio e video ad hoc in base
                     alle necessità dello studente, con chatbot e applicativi personalizzati.
@@ -136,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* Chi Siamo */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light-alt">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light-alt dark:bg-background-dark-alt">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -145,10 +153,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-text-primary">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-text-primary dark:text-text-dark">
               Chi Siamo
             </h2>
-            <p className="text-lg text-text-primary/70 max-w-3xl mx-auto">
+            <p className="text-lg text-text-primary/70 dark:text-text-dark/70 max-w-3xl mx-auto">
               WhaleStreet è una realtà formativa italiana fondata e gestita da professionisti ed
               amatori del settore che operano personalmente sugli asset digitali. Il progetto nasce
               verticale nel comparto Crypto e si rivolge ad un pubblico di interessati agli
@@ -163,12 +171,12 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card>
+              <Card className="bg-card dark:bg-card">
                 <CardHeader>
-                  <CardTitle className="text-xl font-heading">Marco</CardTitle>
+                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">Marco</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
+                  <CardDescription className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
                     5 anni di esperienza nell&apos;educazione finanziaria e profonda conoscenza
                     dell&apos;ecosistema Bitcoin. Gode di una certa autorevolezza nell&apos;ambiente
                     ed ha già una base di persone che lo segue costantemente sui suoi social. Ha
@@ -184,12 +192,12 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card>
+              <Card className="bg-card dark:bg-card">
                 <CardHeader>
-                  <CardTitle className="text-xl font-heading">Mattia</CardTitle>
+                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">Mattia</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
+                  <CardDescription className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
                     5 anni di esperienza attiva nel mercato crypto con oltre 1.000 operazioni
                     eseguite e centinaia di migliaia di dollari investiti. Ha previsto la bull run
                     di Bitcoin da inizio 2023 e identificato correttamente il cambio di trend nel
@@ -205,7 +213,7 @@ export default function Home() {
       {/* Newsletter Section */}
       <section
         id="newsletter"
-        className="pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-border bg-background-light"
+        className="pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-border dark:border-border bg-background-light dark:bg-background-dark"
         aria-label="Newsletter"
       >
         <div className="max-w-xl mx-auto">
@@ -216,10 +224,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-text-primary">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-text-primary dark:text-text-dark">
               Resta aggiornato
             </h2>
-            <p className="text-text-primary/70">
+            <p className="text-text-primary/70 dark:text-text-dark/70">
               Ricevi analisi, guide operative e approfondimenti.
             </p>
           </motion.div>

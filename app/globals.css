@@ -7,7 +7,7 @@
     --font-montserrat: 'Montserrat', sans-serif;
     --font-inter: 'Inter', sans-serif;
     
-    /* Shadcn UI variables */
+    /* Shadcn UI variables - Light Mode */
     --background: 244 248 251; /* #F4F8FB */
     --foreground: 33 33 33; /* #212121 */
     --card: 255 255 255;
@@ -30,12 +30,35 @@
     --radius: 0.5rem;
   }
 
+  .dark {
+    /* Shadcn UI variables - Dark Mode */
+    --background: 21 44 66; /* #152C42 */
+    --foreground: 255 255 255; /* #FFFFFF */
+    --card: 21 44 66; /* #152C42 */
+    --card-foreground: 255 255 255;
+    --popover: 21 44 66;
+    --popover-foreground: 255 255 255;
+    --primary: 70 111 157; /* #466F9D Whale Street Blue */
+    --primary-foreground: 255 255 255;
+    --secondary: 82 62 178; /* #523EB2 Royal Anchor */
+    --secondary-foreground: 255 255 255;
+    --muted: 46 78 125; /* #2E4C70 */
+    --muted-foreground: 169 197 224; /* #A9C5E0 */
+    --accent: 59 149 217; /* #3B95D9 Biolume Blue */
+    --accent-foreground: 255 255 255;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 46 78 125; /* #2E4C70 */
+    --input: 46 78 125;
+    --ring: 59 149 217;
+  }
+
   * {
     @apply border-border/20;
   }
 
   body {
-    @apply bg-background-light text-text-primary font-sans antialiased;
+    @apply bg-background-light dark:bg-background-dark text-text-primary dark:text-text-dark font-sans antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
