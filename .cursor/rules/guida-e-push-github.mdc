@@ -21,6 +21,5 @@ Dopo **ogni modifica** che l'utente ti chiede di fare:
 **IMPORTANTE**: Quando il sito è online, ogni push causa un deploy automatico su Vercel. Quindi:
 - ✅ **Commit sempre**: salva le modifiche localmente (backup)
 - ❌ **Push solo su richiesta**: non pushare automaticamente dopo ogni modifica
-- ✅ **Preview locale**: usa `npm run dev` per vedere le modifiche senza pushare
 
 Se il contesto è un sottoprogetto con suo `.git` (es. WhaleStreet, Bailout), eseguire commit e push **in quella cartella**. Se non c'è repo inizializzato o remoto configurato, segnalarlo all'utente invece di forzare il push.

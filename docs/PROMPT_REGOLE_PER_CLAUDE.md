@@ -31,10 +31,6 @@ Copia tutto il blocco sotto (dal primo "---" incluso) e incollalo in una chat co
 - Segui le indicazioni di **GUIDA.md** e **README.md** se presenti nella root del progetto.
 - Per modifiche rilevanti (nuove sezioni, cambio struttura, contenuti importanti), suggerisci di aggiornare **CHANGELOG.md** con data e breve descrizione.
 
-## Anteprima in locale (per me)
-- Per vedere le modifiche senza push: dalla cartella del progetto eseguo `npx serve` (porta 3000) o `npx serve -l 3001` se ho già un altro server sulla 3000. Apro il browser su localhost. Ricarico la pagina dopo ogni modifica.
-- Non è necessario che tu esegua il server; è solo per ricordare che lavoro in locale e pusho quando sono contento.
-
 ---
 
 *Fine del prompt. Dopo averlo incollato, puoi chiedere a Claude di lavorare sul sito: rispetterà commit sempre, push solo quando dici che sei pronto, URL senza .html e dominio whalestreet.website.*
