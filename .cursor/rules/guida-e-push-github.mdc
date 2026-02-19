@@ -1,5 +1,5 @@
 ---
-description: Seguire GUIDA.md e README.md; fare commit sempre, push solo su richiesta esplicita
+description: Seguire GUIDA.md e README.md; proporre commit e push solo su richiesta esplicita
 alwaysApply: true
 ---
 
@@ -13,13 +13,13 @@ alwaysApply: true
 
 ## Commit e push su GitHub
 
-Dopo **ogni modifica** che l'utente ti chiede di fare:
+**NON fare commit o push automaticamente.** Fai commit e push **solo quando l'utente lo chiede esplicitamente**.
 
-1. **Commit**: fare `git add` dei file modificati e `git commit` con messaggio chiaro e descrittivo (es. "Aggiunto X", "Corretto Y in Z"). **Sempre fare commit** per salvare le modifiche localmente.
-2. **Push**: **NON fare push automaticamente**. Il push su GitHub va fatto **SOLO quando l'utente lo richiede esplicitamente** (es. "pusha", "sono contento pusha", "pubblica", "ok vai"). I commit restano sul PC locale finché l'utente non decide di pushare.
+1. **Commit**: fai commit **solo quando l'utente lo richiede esplicitamente** (es. "fai commit", "committa", "salva"). Non fare commit automaticamente dopo le modifiche.
+2. **Push**: fai push su GitHub **solo quando l'utente lo richiede esplicitamente** (es. "pusha", "sono contento pusha", "pubblica", "ok vai").
 
 **IMPORTANTE**: Quando il sito è online, ogni push causa un deploy automatico su Vercel. Quindi:
-- ✅ **Commit sempre**: salva le modifiche localmente (backup)
-- ❌ **Push solo su richiesta**: non pushare automaticamente dopo ogni modifica
+- ❌ **NON fare commit automaticamente**: chiedi sempre conferma prima di fare commit
+- ❌ **NON fare push automaticamente**: fai push solo quando l'utente lo chiede esplicitamente
 
-Se il contesto è un sottoprogetto con suo `.git` (es. WhaleStreet, Bailout), eseguire commit e push **in quella cartella**. Se non c'è repo inizializzato o remoto configurato, segnalarlo all'utente invece di forzare il push.
+Se il contesto è un sottoprogetto con suo `.git` (es. WhaleStreet, Bailout), eseguire commit e push **in quella cartella** solo su richiesta esplicita. Se non c'è repo inizializzato o remoto configurato, segnalarlo all'utente invece di forzare il push.
