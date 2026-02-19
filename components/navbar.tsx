@@ -59,9 +59,6 @@ export default function Navbar() {
               <Button variant="outline" size="sm" asChild>
                 <Link href="/report-gratuito">Report Gratuito</Link>
               </Button>
-              <Button variant="accent" size="sm" asChild>
-                <Link href="/promo-xtb">1 mese gratuito</Link>
-              </Button>
               <ThemeToggle />
             </div>
           </div>
@@ -111,11 +108,6 @@ export default function Navbar() {
                 <Button variant="outline" size="sm" className="w-full" asChild>
                   <Link href="/report-gratuito" onClick={() => setIsOpen(false)}>
                     Report Gratuito
-                  </Link>
-                </Button>
-                <Button variant="accent" size="sm" className="w-full" asChild>
-                  <Link href="/promo-xtb" onClick={() => setIsOpen(false)}>
-                    1 mese gratuito
                   </Link>
                 </Button>
               </div>
