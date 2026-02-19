@@ -1,5 +1,5 @@
 ---
-description: Seguire GUIDA.md e README.md; fare sempre commit e push su GitHub dopo le modifiche
+description: Seguire GUIDA.md e README.md; fare commit sempre, push solo su richiesta esplicita
 alwaysApply: true
 ---
 
@@ -15,7 +15,12 @@ alwaysApply: true
 
 Dopo **ogni modifica** che l'utente ti chiede di fare:
 
-1. **Commit**: fare `git add` dei file modificati e `git commit` con messaggio chiaro e descrittivo (es. "Aggiunto X", "Corretto Y in Z").
-2. **Push**: fare `git push` per pubblicare i cambiamenti sul remoto (GitHub).
+1. **Commit**: fare `git add` dei file modificati e `git commit` con messaggio chiaro e descrittivo (es. "Aggiunto X", "Corretto Y in Z"). **Sempre fare commit** per salvare le modifiche localmente.
+2. **Push**: **NON fare push automaticamente**. Il push su GitHub va fatto **SOLO quando l'utente lo richiede esplicitamente** (es. "pusha", "sono contento pusha", "pubblica", "ok vai"). I commit restano sul PC locale finché l'utente non decide di pushare.
+
+**IMPORTANTE**: Quando il sito è online, ogni push causa un deploy automatico su Vercel. Quindi:
+- ✅ **Commit sempre**: salva le modifiche localmente (backup)
+- ❌ **Push solo su richiesta**: non pushare automaticamente dopo ogni modifica
+- ✅ **Preview locale**: usa `npm run dev` per vedere le modifiche senza pushare
 
 Se il contesto è un sottoprogetto con suo `.git` (es. WhaleStreet, Bailout), eseguire commit e push **in quella cartella**. Se non c'è repo inizializzato o remoto configurato, segnalarlo all'utente invece di forzare il push.
