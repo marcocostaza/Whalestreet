@@ -4,7 +4,27 @@
 
 Quando modifichi il sito, puoi vedere le modifiche in tempo reale sul tuo computer **senza pushare su GitHub** (e quindi senza aggiornare il sito online).
 
-## Passi semplici
+## 🚀 Avvio Automatico (Consigliato)
+
+**Il server si avvia automaticamente quando apri la cartella del progetto!**
+
+Ho configurato un task automatico che:
+- ✅ Si avvia quando apri la cartella WhaleStreet in Cursor
+- ✅ Rimane attivo in background
+- ✅ Si vede nell'output panel di Cursor
+- ✅ Si ferma quando chiudi Cursor o chiudi la cartella
+
+**Come funziona:**
+1. Apri la cartella `Projects/Website Master/WhaleStreet` in Cursor
+2. Il server si avvia automaticamente su `http://localhost:3000`
+3. Apri il browser su `localhost:3000` e vedi le modifiche in tempo reale
+
+**Per fermare il server:**
+- Premi `Cmd+Shift+P` (Mac) o `Ctrl+Shift+P` (Windows/Linux)
+- Scrivi "Terminate Task" e seleziona il task del server
+- Oppure chiudi Cursor
+
+## Passi manuali (se l'auto-start non funziona)
 
 ### 1. Avvia il server di sviluppo
 
@@ -77,3 +97,31 @@ Se vedi un errore che dice che la porta 3000 è occupata:
 - **Push** = invio su GitHub → Vercel aggiorna il sito online
 
 Puoi fare molti commit senza pushare. Pusha solo quando sei sicuro che le modifiche vadano online.
+
+## 🎯 Avvio Manuale del Task (Alternativa)
+
+Se l'auto-start non funziona o vuoi avviare manualmente:
+
+1. Premi `Cmd+Shift+P` (Mac) o `Ctrl+Shift+P` (Windows/Linux)
+2. Scrivi "Run Task"
+3. Seleziona "🚀 Avvia Server Dev (npm run dev)"
+4. Il server si avvia e vedi l'output nel pannello terminale
+
+**Per fermare:**
+- Premi `Cmd+Shift+P` → "Terminate Task" → seleziona il task del server
+- Oppure usa il task "🛑 Ferma Server Dev"
+
+## 🔧 Configurazione Auto-Start
+
+Se vuoi che il server si avvii sempre automaticamente:
+
+1. Apri `.vscode/settings.json` (o crealo se non esiste)
+2. Assicurati che contenga:
+   ```json
+   {
+     "task.allowAutomaticTasks": "on"
+   }
+   ```
+3. Riapri la cartella del progetto
+
+Il task è già configurato in `.vscode/tasks.json` con `"runOn": "folderOpen"`, quindi dovrebbe avviarsi automaticamente quando apri la cartella.
