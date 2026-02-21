@@ -7,6 +7,8 @@ Status: Done
 
 **WhaleStreet** è una boutique di consulenza e tutoring 1-to-1 per HNWI (High Net Worth Individuals) e aziende, verticale su Bitcoin, asset allocation, sicurezza patrimoniale e rendimenti passivi in DeFi/CeFi. Non siamo un'accademia di massa: offriamo percorsi sartoriali e affiancamento operativo a chi ha capitali importanti (30k-50k+ da allocare) e cerca alternative alle banche tradizionali.
 
+**Mantra:** Lavoriamo **o gratis o pertanto, ma mai per poco.** Report (Mattia), lezioni (Marco) e formazione con AI (Oracolo) sono usati **gratis** nel funnel per promuovere e trovare clienti; la consulenza è solo high-ticket.
+
 ### Quali sono i due pilastri principali?
 
 **Pilastro 1 — Supporto umano sartoriale (1-to-1):**

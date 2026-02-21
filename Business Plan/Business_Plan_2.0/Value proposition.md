@@ -3,21 +3,30 @@
 No.: 4
 Status: Done
 
-### A chi parli?
+### Mantra
+
+**Lavoriamo o gratis o pertanto, ma mai per poco.** Parliamo solo a chi può diventare cliente high-ticket; tutto il resto (contenuti, report, AI) è gratis nel funnel per attrarre e qualificare.
+
+### A chi parli? (Target persona)
 
 Parliamo esclusivamente a:
 
-**Target 2 — HNWI (30-60 anni):**
+**Persona 1 — Imprenditore 45-55 anni (HNWI):**
 
-- Imprenditori, liberi professionisti, manager con patrimoni importanti.
-- Capitale da allocare: 30.000€ - 50.000€ o superiore.
-- Visione di lungo periodo su Bitcoin, non speculazione a breve termine.
-- Cercano alternativa alle banche e gestione professionale del rischio.
+- Titolare/co-titolare PMI, liquidità 50k-200k+. Vuole proteggere il capitale dall'inflazione, diversificare senza perdere il controllo. Dubbi tipici: "È tardi per Bitcoin?", "Quanto in BTC vs stablecoin?", "Come custodisco?", "Rendimenti reali?".
+- Dove: LinkedIn, Facebook (Ads), newsletter. Cerca consiglio operativo 1-to-1, non corsi.
 
-**Target 3 — Aziende (B2B):**
+**Persona 2 — Libero professionista / manager 35-50 anni:**
 
-- Società che vogliono diversificare la tesoreria.
-- Interesse a allocare parte del patrimonio aziendale in Bitcoin o stablecoin per yield e protezione dall'inflazione.
+- Avvocato, medico, manager, RAL 80k+, patrimonio 30k-100k. Poco tempo, vuole asset allocation chiara e affiancamento ("fai questo, poi questo"). Dubbi: "Dove metto 50k?", "Bitcoin troppo volatile?", "Tasse?", "Quanto tempo mi toglie?".
+- Dove: LinkedIn, passaparola. Vuole delegare la parte operativa ma capire le scelte.
+
+**Persona 3 — Azienda (B2B, tesoreria):**
+
+- CFO, amministratore, tesoreria 100k+. Vuole diversificare in Bitcoin/stablecoin (yield, protezione). Dubbi: "È legale per la società?", "Contabilizzazione?", "Exchange per aziende?", "Custodia?".
+- Dove: LinkedIn, eventi, referral.
+
+Dettaglio persona, dubbi e obiezioni: [Boutique_MVP_e_funnel.md](Boutique_MVP_e_funnel.md).
 
 ### Quali problemi risolvi per loro?
 

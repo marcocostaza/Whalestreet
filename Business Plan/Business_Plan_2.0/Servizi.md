@@ -3,14 +3,24 @@
 No.: 5
 Status: Done
 
+### Mantra
+
+**Lavoriamo o gratis o pertanto, ma mai per poco.** Tutto ciò che abbiamo (report di Mattia, lezioni di Marco, formazione con AI) viene usato **gratis** nel funnel per promuovere e trovare clienti; non vendiamo nulla "a poco". Solo consulenza high-ticket.
+
 ### Cosa non offriamo più
 
 - Whale Academy a 500€/anno.
 - Chat pubblica di gruppo.
 - Q&A di massa.
-- Report mensili standardizzati per tutti.
+- Report o corsi **venduti** a prezzo basso (il report è lead magnet o contenuto gratis, non prodotto "per poco").
 
-### Cosa offriamo
+### Cosa usiamo nel funnel (gratis, per trovare clienti)
+
+- **Report (Mattia):** estratto o report completo in cambio di mail (lead magnet); estratti sui social. Dimostrano competenza e portano al Survey/Discovery Call.
+- **Lezioni (Marco):** pillole sui social, trascrizioni per Oracolo; eventuale anteprima o minicorso gratuito per qualificare. Mai vendute "a poco".
+- **Oracolo (NotebookLM):** risposte coerenti col metodo; usato per preparazione call e (opzionale) "fai una domanda" gratuito nel funnel. Scalabile, nessuna vendita a poco.
+
+### Cosa offriamo (a pagamento: solo high-ticket)
 
 ### 1. Private Tutoring Pathway
 
