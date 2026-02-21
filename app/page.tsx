@@ -52,9 +52,10 @@ export default function Home() {
                 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-text-primary dark:text-text-dark mb-6 leading-tight"
               >
                 Impara a Diversificare il Tuo Patrimonio con{" "}
-                <span className="text-primary dark:text-accent">
-                  Bitcoin e Asset Digitali.
-                </span>
+                <span className="text-primary dark:text-accent">Bitcoin</span>
+                <span className="text-text-primary dark:text-text-dark"> e </span>
+                <span className="text-primary dark:text-accent">Asset Digitali</span>
+                <span className="text-text-primary dark:text-text-dark">.</span>
               </motion.h1>
 
               <motion.p
@@ -80,7 +81,7 @@ export default function Home() {
                   asChild
                 >
                   <Link href="#applica">
-                    Prenota una Discovery Call
+                    Prenota una chiamata conoscitiva gratuita
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -125,8 +126,7 @@ export default function Home() {
           >
             Le pi&ugrave; grandi istituzioni finanziarie del mondo hanno preso
             posizione. Ignorare la migliore asset class dell&apos;ultimo
-            decennio non &egrave; prudenza: &egrave; un&apos;omissione
-            strategica.
+            decennio non &egrave; prudenza, &egrave; un rischio certo.
           </motion.p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -135,25 +135,21 @@ export default function Home() {
                 icon: Landmark,
                 title: "BlackRock IBIT",
                 stat: "$50B+ AUM",
-                text: "L\u2019ETF Bitcoin di BlackRock ha raggiunto $50 miliardi di asset in meno di un anno: uno dei lanci di maggior successo nella storia dei mercati.",
               },
               {
                 icon: TrendingUp,
                 title: "Bitcoin Treasury",
                 stat: "252.000+ BTC",
-                text: "MicroStrategy detiene oltre 252.000 Bitcoin come riserva aziendale, pioniere della strategia \u201cBitcoin Treasury\u201d ora adottata da decine di aziende.",
               },
               {
                 icon: Building2,
                 title: "Fondi Pensione e Banche",
                 stat: "Adozione globale",
-                text: "Fondi pensione, fondi sovrani e grandi banche (Goldman Sachs, Fidelity, Morgan Stanley) offrono ormai prodotti Bitcoin ai propri clienti.",
               },
               {
                 icon: Globe,
                 title: "Governi e Riserve",
                 stat: "Riserve strategiche",
-                text: "Governi e banche centrali stanno valutando Bitcoin come riserva strategica. Gli Stati Uniti hanno avviato il dibattito su una Strategic Bitcoin Reserve.",
               },
             ].map((item, i) => (
               <motion.div
@@ -162,18 +158,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-xl bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.08] transition-colors"
+                className="rounded-xl bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.08] transition-colors flex flex-col items-center text-center"
               >
-                <item.icon className="w-8 h-8 text-accent mb-3" />
+                <item.icon className="w-12 h-12 text-accent mb-4" aria-hidden />
                 <p className="text-xs text-accent font-bold uppercase tracking-wider mb-1">
                   {item.stat}
                 </p>
-                <h4 className="font-heading font-bold text-white mb-2">
+                <h4 className="font-heading font-bold text-white">
                   {item.title}
                 </h4>
-                <p className="text-sm text-white/55 leading-relaxed">
-                  {item.text}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -223,7 +216,7 @@ export default function Home() {
             {...fadeInView}
             className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-center mb-4 text-text-primary dark:text-text-dark"
           >
-            Il costo dell&apos;inazione. E il costo degli errori.
+            Il costo di non agire o di farlo senza conoscenza
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -242,22 +235,27 @@ export default function Home() {
               {
                 icon: KeyRound,
                 title: "Chiavi private perse",
-                text: "Circa il 20% di tutti i Bitcoin esistenti risulta perso per sempre. Le chiavi non si recuperano.",
+                text: "Circa il 20% di tutti i Bitcoin esistenti risulta perso per sempre. Le chiavi non si recuperano. La sicurezza della custodia dipende da te.",
               },
               {
                 icon: ShieldAlert,
-                title: "Truffe e phishing",
-                text: "Miliardi di dollari persi ogni anno in scam. Senza le competenze giuste, si \u00e8 esposti.",
+                title: "Truffe, phishing e sicurezza",
+                text: "Miliardi persi ogni anno in scam. Senza le competenze giuste si è esposti. Privacy e sicurezza dei dati vanno protette con metodo.",
               },
               {
                 icon: Ban,
                 title: "Errori operativi",
-                text: "Un indirizzo sbagliato, una rete errata: fondi irrecuperabili. Servono protocolli operativi precisi.",
+                text: "Un indirizzo sbagliato, una rete errata: fondi irrecuperabili. Servono protocolli operativi precisi e consapevolezza dei rischi.",
               },
               {
                 icon: Receipt,
                 title: "Errori fiscali",
-                text: "In Italia la mancata dichiarazione di cripto-attivit\u00e0 pu\u00f2 comportare sanzioni fino al 240% dell\u2019imposta dovuta.",
+                text: "In Italia la mancata dichiarazione di cripto-attività può comportare sanzioni fino al 240% dell'imposta dovuta.",
+              },
+              {
+                icon: Shield,
+                title: "Privacy e sicurezza",
+                text: "Self-custody e uso di strumenti adeguati proteggono identità e patrimonio. Operare senza competenza espone a furti, perdite e violazioni della privacy.",
               },
             ].map((item, i) => (
               <motion.div
@@ -293,7 +291,7 @@ export default function Home() {
             <br />
             <span className="text-text-primary/60 dark:text-text-dark/60 font-sans font-normal text-base">
               Ti insegniamo a operare con metodo, evitando errori tecnici,
-              operativi e fiscali.
+              operativi e fiscali e proteggendo privacy e sicurezza.
             </span>
           </motion.p>
         </div>
@@ -317,7 +315,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-center text-text-primary/70 dark:text-text-dark/70 mb-12 max-w-2xl mx-auto"
           >
-            Supporto tecnico-educativo personalizzato. Non gestiamo il tuo
+            Supporto tecnico-educativo personalizzato, disponibile 24 ore su 24 e 7 giorni su 7. Non gestiamo il tuo
             capitale: ti formiamo per operare in totale autonomia e con
             consapevolezza.
           </motion.p>

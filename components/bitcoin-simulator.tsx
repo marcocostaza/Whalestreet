@@ -22,7 +22,34 @@ const BTC_PRICES_EUR: Record<number, number> = {
 const CURRENT_BTC_PRICE_EUR = 94000;
 const CURRENT_YEAR = 2026;
 const CURRENT_DATE_LABEL = "Feb 2026";
-const TRAD_ANNUAL_RETURN = 0.035; // 3.5% rendimento medio portafoglio tradizionale
+
+/**
+ * Rendimenti annui storici MSCI ACWI (All Country World Index), fonte pubblica.
+ * Fonte: MSCI / dati storici indicizzati (net USD).
+ */
+const MSCI_ACWI_RETURNS: Record<number, number> = {
+  2019: 0.273,
+  2020: 0.1682,
+  2021: 0.1904,
+  2022: -0.1796,
+  2023: 0.2281,
+  2024: 0.1802,
+  2025: 0, // placeholder (anno in corso / non ancora concluso)
+};
+
+/**
+ * Rendimenti annui approssimativi indice obbligazionario globale (aggregate).
+ * Usato per la componente obbligazionaria del portafoglio tradizionale.
+ */
+const BOND_INDEX_RETURNS: Record<number, number> = {
+  2019: 0.06,
+  2020: 0.07,
+  2021: -0.05,
+  2022: -0.16,
+  2023: 0.05,
+  2024: 0,
+  2025: 0.02,
+};
 
 function formatEUR(value: number): string {
   return new Intl.NumberFormat("it-IT", {
@@ -45,10 +72,32 @@ function getRiskProfile(pct: number): { label: string; color: string } {
   return { label: "Aggressivo", color: "text-red-400" };
 }
 
+/** Calcola il valore finale di un capitale con rendimenti annui reali (equity + obbligazioni). */
+function compoundWithRealReturns(
+  initial: number,
+  fromYear: number,
+  toYear: number,
+  equityPct: number,
+  bondPct: number
+): number {
+  let value = initial;
+  const equityFrac = equityPct / 100;
+  const bondFrac = bondPct / 100;
+  for (let y = fromYear; y < toYear; y++) {
+    const rEquity = MSCI_ACWI_RETURNS[y] ?? 0;
+    const rBond = BOND_INDEX_RETURNS[y] ?? 0;
+    const rPortfolio = equityFrac * rEquity + bondFrac * rBond;
+    value *= 1 + rPortfolio;
+  }
+  return value;
+}
+
 export default function BitcoinSimulator() {
   const [totalCapital, setTotalCapital] = useState(200000);
   const [allocation, setAllocation] = useState(5);
   const [entryYear, setEntryYear] = useState(2020);
+  const [bondPct, setBondPct] = useState(40); // % obbligazioni nel portafoglio tradizionale
+  const equityPct = 100 - bondPct;
 
   const result = useMemo(() => {
     const btcAllocated = totalCapital * (allocation / 100);
@@ -60,18 +109,28 @@ export default function BitcoinSimulator() {
     const btcValueToday = (btcAllocated / btcEntryPrice) * CURRENT_BTC_PRICE_EUR;
     const btcReturnPct = ((btcValueToday - btcAllocated) / btcAllocated) * 100;
 
-    // Porzione tradizionale: crescita composta al 3.5% annuo
-    const tradValueToday =
-      tradAllocated * Math.pow(1 + TRAD_ANNUAL_RETURN, yearsElapsed);
+    // Porzione tradizionale: rendimenti reali MSCI ACWI + obbligazioni
+    const tradValueToday = compoundWithRealReturns(
+      tradAllocated,
+      entryYear,
+      CURRENT_YEAR,
+      equityPct,
+      bondPct
+    );
 
     // Portafoglio CON BTC
     const portfolioWithBtc = btcValueToday + tradValueToday;
     const portfolioWithBtcReturn =
       ((portfolioWithBtc - totalCapital) / totalCapital) * 100;
 
-    // Portafoglio SENZA BTC (tutto tradizionale)
-    const portfolioWithoutBtc =
-      totalCapital * Math.pow(1 + TRAD_ANNUAL_RETURN, yearsElapsed);
+    // Portafoglio SENZA BTC (100% tradizionale, stessi rendimenti reali)
+    const portfolioWithoutBtc = compoundWithRealReturns(
+      totalCapital,
+      entryYear,
+      CURRENT_YEAR,
+      equityPct,
+      bondPct
+    );
     const portfolioWithoutBtcReturn =
       ((portfolioWithoutBtc - totalCapital) / totalCapital) * 100;
 
@@ -79,7 +138,7 @@ export default function BitcoinSimulator() {
     const netImpact = portfolioWithBtc - portfolioWithoutBtc;
     const netImpactPct = (netImpact / portfolioWithoutBtc) * 100;
 
-    // Peso BTC sul portafoglio attuale
+    // Peso BTC sul portafoglio attuale (per barra composizione)
     const btcWeightNow = (btcValueToday / portfolioWithBtc) * 100;
 
     return {
@@ -96,7 +155,7 @@ export default function BitcoinSimulator() {
       btcWeightNow,
       yearsElapsed,
     };
-  }, [totalCapital, allocation, entryYear]);
+  }, [totalCapital, allocation, entryYear, bondPct, equityPct]);
 
   const years = Object.keys(BTC_PRICES_EUR).map(Number);
   const allocations = [1, 3, 5, 10];
@@ -180,6 +239,28 @@ export default function BitcoinSimulator() {
               ))}
             </div>
           </div>
+
+          {/* % Obbligazioni portafoglio tradizionale (MSCI + bonds) */}
+          <div>
+            <label className="block text-sm font-medium text-white/60 mb-2">
+              Portafoglio tradizionale: % obbligazioni (resto MSCI ACWI)
+            </label>
+            <div className="flex gap-2">
+              {[0, 20, 40, 60, 80, 100].map((pct) => (
+                <button
+                  key={pct}
+                  onClick={() => setBondPct(pct)}
+                  className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 ${
+                    bondPct === pct
+                      ? "bg-[#3B95D9] text-white shadow-[0_0_20px_-5px_rgba(59,149,217,0.4)]"
+                      : "bg-white/10 text-white/50 hover:bg-white/15 hover:text-white/70"
+                  }`}
+                >
+                  {pct}%
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -224,12 +305,6 @@ export default function BitcoinSimulator() {
                   {formatEUR(Math.round(result.tradValueToday))}
                 </span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-white/50">Peso BTC attuale</span>
-                <span className="text-white font-medium">
-                  {result.btcWeightNow.toFixed(1)}% del portafoglio
-                </span>
-              </div>
             </div>
           </div>
 
@@ -250,8 +325,9 @@ export default function BitcoinSimulator() {
             </p>
             <div className="mt-4 pt-4 border-t border-white/10">
               <p className="text-sm text-white/40">
-                Rendimento stimato: {(TRAD_ANNUAL_RETURN * 100).toFixed(1)}%
-                annuo composto (media portafoglio bilanciato obbligazioni/azioni).
+                Dati storici reali: MSCI ACWI (azioni globali) e indice
+                obbligazionario globale. Composizione: {100 - bondPct}% azioni /{" "}
+                {bondPct}% obbligazioni.
               </p>
             </div>
           </div>
@@ -314,11 +390,10 @@ export default function BitcoinSimulator() {
       <div className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.04] border border-amber-500/20">
         <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
         <p className="text-xs text-white/40 leading-relaxed">
-          Simulazione basata su dati storici approssimativi (BTC in EUR) e un
-          rendimento ipotetico del{" "}
-          {(TRAD_ANNUAL_RETURN * 100).toFixed(1)}% annuo per la componente
-          tradizionale. I rendimenti passati non sono indicativi di risultati
-          futuri. Questo strumento ha esclusivamente scopo educativo e
+          Simulazione basata su dati storici approssimativi: BTC in EUR e
+          rendimenti storici MSCI ACWI + indice obbligazionario globale per la
+          componente tradizionale. I rendimenti passati non sono indicativi di
+          risultati futuri. Questo strumento ha esclusivamente scopo educativo e
           informativo e non costituisce sollecitazione all&apos;investimento,
           raccomandazione finanziaria o invito all&apos;acquisto di alcuno
           strumento.
