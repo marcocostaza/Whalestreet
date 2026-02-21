@@ -14,6 +14,9 @@ import {
   Receipt,
   Ban,
   Handshake,
+  Landmark,
+  TrendingUp,
+  Globe,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -48,7 +51,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-text-primary dark:text-text-dark mb-6 leading-tight"
               >
-                Impara a Proteggere il Tuo Patrimonio con{" "}
+                Impara a Diversificare il Tuo Patrimonio con{" "}
                 <span className="text-primary dark:text-accent">
                   Bitcoin e Asset Digitali.
                 </span>
@@ -60,10 +63,9 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="text-lg sm:text-xl text-text-primary/80 dark:text-text-dark/80 mb-10 leading-relaxed"
               >
-                Formazione premium e tutoring operativo 1-to-1 su Bitcoin e Crypto.
-                Ti affianchiamo per comprendere i mercati, operare in autonomia e
-                proteggere il tuo capitale. Esclusivamente verticali su Bitcoin e
-                asset digitali.
+                Formazione premium e tutoring operativo 1-to-1 su Bitcoin e
+                Crypto. La tua porta d&apos;ingresso sicura per comprendere
+                l&apos;asset class che sta ridefinendo la finanza globale.
               </motion.p>
 
               <motion.div
@@ -94,8 +96,8 @@ export default function Home() {
             >
               <div className="aspect-[4/3] rounded-2xl bg-background-dark-alt dark:bg-[#0A1A29] border border-primary/20 dark:border-accent/20 flex items-center justify-center p-8">
                 <p className="text-center text-text-dark/60 font-sans text-sm leading-relaxed">
-                  [Placeholder: Interfaccia trading pulita su MacBook in ambiente
-                  elegante]
+                  [Placeholder: Interfaccia trading pulita su MacBook in
+                  ambiente elegante]
                 </p>
               </div>
             </motion.div>
@@ -104,64 +106,153 @@ export default function Home() {
       </section>
 
       {/* ============================================= */}
-      {/* SEZIONE B: IL PROBLEMA & COSTO OPPORTUNITA */}
+      {/* SEZIONE B: INSTITUTIONAL ADOPTION */}
       {/* ============================================= */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#152C42] dark:bg-[#152C42]">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto">
           <motion.h2
             {...fadeInView}
-            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white mb-8"
+            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white text-center mb-4"
           >
-            Il costo del denaro fermo.
+            Bitcoin nel 2026: da asset di nicchia a standard istituzionale.
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center text-white/60 mb-14 max-w-3xl mx-auto text-lg leading-relaxed"
+          >
+            Le pi&ugrave; grandi istituzioni finanziarie del mondo hanno preso
+            posizione. Ignorare la migliore asset class dell&apos;ultimo
+            decennio non &egrave; prudenza: &egrave; un&apos;omissione
+            strategica.
+          </motion.p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Landmark,
+                title: "BlackRock IBIT",
+                stat: "$50B+ AUM",
+                text: "L\u2019ETF Bitcoin di BlackRock ha raggiunto $50 miliardi di asset in meno di un anno: uno dei lanci di maggior successo nella storia dei mercati.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Bitcoin Treasury",
+                stat: "252.000+ BTC",
+                text: "MicroStrategy detiene oltre 252.000 Bitcoin come riserva aziendale, pioniere della strategia \u201cBitcoin Treasury\u201d ora adottata da decine di aziende.",
+              },
+              {
+                icon: Building2,
+                title: "Fondi Pensione e Banche",
+                stat: "Adozione globale",
+                text: "Fondi pensione, fondi sovrani e grandi banche (Goldman Sachs, Fidelity, Morgan Stanley) offrono ormai prodotti Bitcoin ai propri clienti.",
+              },
+              {
+                icon: Globe,
+                title: "Governi e Riserve",
+                stat: "Riserve strategiche",
+                text: "Governi e banche centrali stanno valutando Bitcoin come riserva strategica. Gli Stati Uniti hanno avviato il dibattito su una Strategic Bitcoin Reserve.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="rounded-xl bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.08] transition-colors"
+              >
+                <item.icon className="w-8 h-8 text-accent mb-3" />
+                <p className="text-xs text-accent font-bold uppercase tracking-wider mb-1">
+                  {item.stat}
+                </p>
+                <h4 className="font-heading font-bold text-white mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-white/55 leading-relaxed">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================= */}
+      {/* SEZIONE C: SIMULATORE DI PORTAFOGLIO */}
+      {/* ============================================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0A1A29] dark:bg-[#0A1A29]">
+        <div className="max-w-5xl mx-auto">
+          <motion.h2
+            {...fadeInView}
+            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-center mb-4 text-white"
+          >
+            Quanto impatta una piccola allocazione in Bitcoin?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center text-white/50 mb-12 max-w-2xl mx-auto"
+          >
+            Anche l&apos;1-5% del portafoglio dedicato a Bitcoin pu&ograve;
+            avere un impatto significativo. Esplora i dati storici con il
+            nostro simulatore.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="space-y-6"
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-lg sm:text-xl text-white/85 leading-relaxed">
-              L&apos;inflazione erode il tuo potere d&apos;acquisto. I rendimenti
-              bancari tradizionali non coprono le perdite reali.
-            </p>
-            <p className="text-lg sm:text-xl text-white/85 leading-relaxed">
-              Bitcoin si &egrave; affermato come asset class riconosciuto a livello
-              globale. Ma senza le giuste competenze tecniche, operare su questi
-              mercati pu&ograve; essere rischioso.
-            </p>
+            <BitcoinSimulator />
           </motion.div>
         </div>
+      </section>
 
-        {/* Costo degli errori */}
-        <div className="max-w-5xl mx-auto mt-16">
-          <motion.h3
+      {/* ============================================= */}
+      {/* SEZIONE D: IL COSTO DELL'INAZIONE + ERRORI */}
+      {/* ============================================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary-lighter dark:bg-background-dark">
+        <div className="max-w-5xl mx-auto">
+          <motion.h2
+            {...fadeInView}
+            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-center mb-4 text-text-primary dark:text-text-dark"
+          >
+            Il costo dell&apos;inazione. E il costo degli errori.
+          </motion.h2>
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-xl sm:text-2xl font-heading font-bold text-white text-center mb-10"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center text-text-primary/70 dark:text-text-dark/70 mb-14 max-w-3xl mx-auto text-lg leading-relaxed"
           >
-            Quanto costano gli errori nel settore Crypto?
-          </motion.h3>
+            Non avere nessuna esposizione a Bitcoin &egrave; un costo
+            opportunit&agrave; misurabile. Ma entrare senza le giuste
+            competenze pu&ograve; costare ancora di pi&ugrave;.
+          </motion.p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: KeyRound,
                 title: "Chiavi private perse",
-                text: "Circa il 20% di tutti i Bitcoin esistenti risulta perso per sempre a causa di chiavi smarrite. Irrecuperabili.",
+                text: "Circa il 20% di tutti i Bitcoin esistenti risulta perso per sempre. Le chiavi non si recuperano.",
               },
               {
                 icon: ShieldAlert,
                 title: "Truffe e phishing",
-                text: "Miliardi di dollari persi ogni anno in scam e attacchi di phishing. Senza formazione, si \u00e8 vulnerabili.",
+                text: "Miliardi di dollari persi ogni anno in scam. Senza le competenze giuste, si \u00e8 esposti.",
               },
               {
                 icon: Ban,
-                title: "Errori di invio",
-                text: "Un indirizzo sbagliato, una rete errata: fondi persi per sempre. Servono protocolli operativi chiari.",
+                title: "Errori operativi",
+                text: "Un indirizzo sbagliato, una rete errata: fondi irrecuperabili. Servono protocolli operativi precisi.",
               },
               {
                 icon: Receipt,
@@ -175,15 +266,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-xl bg-white/[0.06] border border-white/10 p-6"
               >
-                <item.icon className="w-8 h-8 text-accent mb-4" />
-                <h4 className="font-heading font-bold text-white mb-2 text-sm">
-                  {item.title}
-                </h4>
-                <p className="text-sm text-white/60 leading-relaxed">
-                  {item.text}
-                </p>
+                <Card className="h-full bg-card dark:bg-card border hover:border-primary/40 dark:hover:border-accent/40 transition-colors">
+                  <CardContent className="p-6">
+                    <item.icon className="w-8 h-8 text-primary dark:text-accent mb-3" />
+                    <h4 className="font-heading font-bold text-foreground dark:text-foreground mb-2 text-sm">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground dark:text-muted-foreground leading-relaxed">
+                      {item.text}
+                    </p>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
@@ -193,21 +287,22 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-10 text-accent font-heading font-bold text-lg sm:text-xl"
+            className="text-center mt-10 text-primary dark:text-accent font-heading font-bold text-lg sm:text-xl"
           >
             La formazione &egrave; l&apos;unica protezione reale.
             <br />
-            <span className="text-white/60 font-sans font-normal text-base">
-              Ti insegniamo a evitare ogni errore tecnico, operativo e fiscale.
+            <span className="text-text-primary/60 dark:text-text-dark/60 font-sans font-normal text-base">
+              Ti insegniamo a operare con metodo, evitando errori tecnici,
+              operativi e fiscali.
             </span>
           </motion.p>
         </div>
       </section>
 
       {/* ============================================= */}
-      {/* SEZIONE C: I NOSTRI SERVIZI */}
+      {/* SEZIONE E: I NOSTRI SERVIZI */}
       {/* ============================================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary-lighter dark:bg-background-dark">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light dark:bg-background-dark-alt">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             {...fadeInView}
@@ -222,12 +317,13 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-center text-text-primary/70 dark:text-text-dark/70 mb-12 max-w-2xl mx-auto"
           >
-            Supporto tecnico-educativo personalizzato. Non gestiamo il tuo capitale:
-            ti formiamo per operare in totale autonomia.
+            Supporto tecnico-educativo personalizzato. Non gestiamo il tuo
+            capitale: ti formiamo per operare in totale autonomia e con
+            consapevolezza.
           </motion.p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 — Private Tutoring */}
+            {/* Card 1 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -245,15 +341,16 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
-                    Affiancamento 1-to-1 su chat privata. Nessun corso di gruppo:
-                    tutoring operativo diretto per comprendere i mercati, impostare
-                    strategie e operare in piena autonomia.
+                    Affiancamento 1-to-1 su chat privata. Nessun corso di
+                    gruppo: tutoring operativo diretto per comprendere i
+                    mercati, ragionare sulle strategie e operare in piena
+                    autonomia.
                   </p>
                 </CardContent>
               </Card>
             </motion.div>
 
-            {/* Card 2 — Formazione Asset Allocation */}
+            {/* Card 2 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -271,15 +368,16 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
-                    Impara a costruire portafogli orientati a BTC. Ti guidiamo
-                    passo dopo passo nella self-custody sicura, nella gestione delle
-                    chiavi private e nelle operazioni su exchange.
+                    Impara a ragionare sulla costruzione di portafogli
+                    orientati a BTC. Ti guidiamo nella self-custody sicura,
+                    nella gestione delle chiavi private e nelle operazioni su
+                    exchange.
                   </p>
                 </CardContent>
               </Card>
             </motion.div>
 
-            {/* Card 3 — Corporate Treasury */}
+            {/* Card 3 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -298,16 +396,16 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
-                    Percorsi formativi per aziende che vogliono comprendere come
-                    diversificare la tesoreria in Bitcoin e stablecoin. Supporto
-                    tecnico e operativo per le prime operazioni.
+                    Percorsi formativi per aziende che vogliono comprendere
+                    come diversificare la tesoreria in Bitcoin e stablecoin.
+                    Supporto tecnico e operativo per le prime allocazioni.
                   </p>
                 </CardContent>
               </Card>
             </motion.div>
           </div>
 
-          {/* Supporto fiscale + Partnership OCF */}
+          {/* Partnership OCF */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -326,19 +424,21 @@ export default function Home() {
                   Supporto Fiscale e Rete di Professionisti Abilitati
                 </h3>
                 <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground mb-4">
-                  Oltre alla formazione tecnica, ti supportiamo anche sulla parte
-                  fiscale relativa alla dichiarazione di cripto-attivit&agrave;. Per chi
-                  necessita di una vera e propria consulenza finanziaria
-                  personalizzata, abbiamo una rete di partner:{" "}
+                  Oltre alla formazione tecnica, ti supportiamo sulla parte
+                  fiscale relativa alla dichiarazione di cripto-attivit&agrave;.
+                  Per chi necessita di consulenza finanziaria personalizzata,
+                  abbiamo una rete di partner:{" "}
                   <strong className="text-foreground dark:text-foreground">
-                    consulenti finanziari abilitati e iscritti all&apos;Albo OCF
+                    consulenti finanziari abilitati e iscritti all&apos;Albo
+                    OCF
                   </strong>
                   , indipendenti dal nostro servizio di formazione.
                 </p>
                 <p className="text-sm text-muted-foreground dark:text-muted-foreground italic">
-                  WhaleStreet si occupa esclusivamente di formazione e tutoring.
-                  La consulenza finanziaria personalizzata &egrave; erogata da
-                  professionisti terzi abilitati, con contratti e pagamenti separati.
+                  WhaleStreet si occupa esclusivamente di formazione e
+                  tutoring. La consulenza finanziaria personalizzata &egrave;
+                  erogata da professionisti terzi abilitati, con contratti e
+                  pagamenti separati.
                 </p>
               </div>
             </div>
@@ -347,9 +447,9 @@ export default function Home() {
       </section>
 
       {/* ============================================= */}
-      {/* SEZIONE D: COME OPERIAMO */}
+      {/* SEZIONE F: COME OPERIAMO */}
       {/* ============================================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light dark:bg-background-dark-alt">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary-lighter dark:bg-background-dark">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             {...fadeInView}
@@ -362,14 +462,15 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center text-text-primary/70 dark:text-text-dark/70 mb-12 max-w-2xl mx-auto"
+            className="text-center text-text-primary/70 dark:text-text-dark/70 mb-12 max-w-3xl mx-auto"
           >
-            Un team di professionisti con esperienza diretta sui mercati crypto,
-            esclusivamente verticali su Bitcoin e asset digitali.
+            Non siamo solo tecnici: siamo analisti che studiano quotidianamente
+            le strutture macroeconomiche di questi mercati.
+            Esclusivamente verticali su Bitcoin e asset digitali.
           </motion.p>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Pilastro 1: Supporto Umano */}
+            {/* Pilastro 1 */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -382,30 +483,31 @@ export default function Home() {
                   <Users className="w-7 h-7 text-primary dark:text-accent" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary dark:text-text-dark">
-                  Supporto Umano Sartoriale
+                  Team con Esperienza Diretta
                 </h3>
               </div>
               <p className="text-base sm:text-lg leading-relaxed text-text-primary/80 dark:text-text-dark/80">
-                Marco e Mattia operano direttamente sui mercati crypto. Con oltre
-                5 anni di esperienza e 1.000+ operazioni eseguite, trasferiscono
-                competenza operativa reale &mdash; non teoria generica.
+                Marco e Mattia operano direttamente sui mercati crypto da oltre
+                5 anni, con 1.000+ operazioni eseguite. Non insegniamo teoria
+                da manuali: trasferiamo competenza maturata sul campo,
+                nell&apos;analisi macroeconomica e nelle operazioni reali.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-text-primary/80 dark:text-text-dark/80">
-                Ogni cliente ha un percorso personalizzato: affiancamento diretto
-                su chat privata, chiamate strategiche e protocolli operativi chiari
-                per raggiungere l&apos;autonomia completa.
+                Ci poniamo come la tua porta d&apos;ingresso sicura: ti
+                accompagniamo a partire da allocazioni piccole ma strategiche,
+                costruendo competenza e fiducia passo dopo passo.
               </p>
 
-              {/* Placeholder immagine */}
+              {/* Placeholder */}
               <div className="aspect-[16/9] rounded-xl bg-background-dark-alt dark:bg-[#0A1A29] border border-primary/20 dark:border-accent/20 flex items-center justify-center p-6 mt-4">
                 <p className="text-center text-text-dark/60 font-sans text-sm">
-                  [Placeholder: Ritratti professionali dei founder Marco e Mattia
-                  in ambiente ufficio moderno]
+                  [Placeholder: Ritratti professionali dei founder Marco e
+                  Mattia in ambiente ufficio moderno]
                 </p>
               </div>
             </motion.div>
 
-            {/* Pilastro 2: Tecnologia AI */}
+            {/* Pilastro 2 */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -428,15 +530,15 @@ export default function Home() {
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-text-primary/80 dark:text-text-dark/80">
                 Creiamo dashboard e script personalizzati (es. TradingView)
-                costruiti unicamente per il singolo cliente. Non tool generici:
-                strumenti su misura per le tue esigenze specifiche.
+                costruiti per il singolo cliente. Non tool generici: strumenti
+                su misura per le tue esigenze specifiche.
               </p>
 
-              {/* Placeholder immagine */}
+              {/* Placeholder */}
               <div className="aspect-[16/9] rounded-xl bg-background-dark-alt dark:bg-[#0A1A29] border border-secondary/20 dark:border-accent-purple/20 flex items-center justify-center p-6 mt-4">
                 <p className="text-center text-text-dark/60 font-sans text-sm">
-                  [Placeholder: Grafico Bitcoin con sovrapposizione di nodi neurali
-                  AI]
+                  [Placeholder: Grafico Bitcoin con sovrapposizione di nodi
+                  neurali AI]
                 </p>
               </div>
             </motion.div>
@@ -445,40 +547,7 @@ export default function Home() {
       </section>
 
       {/* ============================================= */}
-      {/* SEZIONE E: SIMULATORE BITCOIN */}
-      {/* ============================================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#152C42] dark:bg-[#152C42]">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            {...fadeInView}
-            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-center mb-4 text-white"
-          >
-            Quanto sarebbe cresciuto il tuo capitale?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center text-white/60 mb-12 max-w-2xl mx-auto"
-          >
-            Usa il simulatore per esplorare i rendimenti storici di Bitcoin.
-            Trascina lo slider e seleziona un anno di ingresso.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <BitcoinSimulator />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ============================================= */}
-      {/* SEZIONE F: CTA FINALE */}
+      {/* SEZIONE G: CTA FINALE */}
       {/* ============================================= */}
       <section
         id="applica"
@@ -492,7 +561,7 @@ export default function Home() {
             {...fadeInView}
             className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white mb-6"
           >
-            Pronto a imparare a proteggere il tuo patrimonio?
+            Pronto ad affacciarti a questo mercato con criterio?
           </motion.h2>
 
           <motion.p
@@ -514,8 +583,8 @@ export default function Home() {
             className="text-base text-white/60 mb-10 leading-relaxed"
           >
             Compila il breve questionario per capire se il nostro percorso
-            formativo &egrave; adatto a te e sbloccare il calendario per una
-            Discovery Call gratuita.
+            formativo &egrave; adatto alle tue esigenze e sbloccare il
+            calendario per una Discovery Call gratuita.
           </motion.p>
 
           <motion.div
@@ -544,8 +613,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 text-sm text-white/40"
           >
-            Tempo stimato: 2 minuti. Nessun dato finanziario richiesto.
-            I tuoi dati sono trattati con massima riservatezza.
+            Tempo stimato: 2 minuti. Nessun dato finanziario richiesto. I tuoi
+            dati sono trattati con massima riservatezza.
           </motion.p>
         </div>
       </section>

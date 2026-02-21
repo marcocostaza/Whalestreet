@@ -2,14 +2,13 @@
 
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
+import { TrendingUp, AlertTriangle, PieChart, BarChart3 } from "lucide-react";
 
 /**
- * Prezzi BTC in EUR approssimativi a inizio anno (Gennaio).
- * Fonte: dati storici pubblici (CoinGecko, CoinMarketCap).
- * Convertiti USD→EUR con tassi di cambio medi annuali.
+ * Prezzi BTC in EUR approssimativi a Gennaio di ogni anno.
+ * Fonte: dati storici pubblici (CoinGecko/CoinMarketCap), convertiti USD→EUR.
  *
- * NOTA: aggiornare periodicamente CURRENT_BTC_PRICE_EUR e CURRENT_DATE_LABEL.
+ * NOTA: aggiornare periodicamente CURRENT_BTC_PRICE_EUR e CURRENT_YEAR.
  */
 const BTC_PRICES_EUR: Record<number, number> = {
   2019: 3160,
@@ -21,7 +20,9 @@ const BTC_PRICES_EUR: Record<number, number> = {
 };
 
 const CURRENT_BTC_PRICE_EUR = 94000;
-const CURRENT_DATE_LABEL = "Febbraio 2026";
+const CURRENT_YEAR = 2026;
+const CURRENT_DATE_LABEL = "Feb 2026";
+const TRAD_ANNUAL_RETURN = 0.035; // 3.5% rendimento medio portafoglio tradizionale
 
 function formatEUR(value: number): string {
   return new Intl.NumberFormat("it-IT", {
@@ -32,133 +33,295 @@ function formatEUR(value: number): string {
   }).format(value);
 }
 
+function formatPct(value: number): string {
+  const sign = value >= 0 ? "+" : "";
+  return `${sign}${value.toFixed(1)}%`;
+}
+
+function getRiskProfile(pct: number): { label: string; color: string } {
+  if (pct <= 2) return { label: "Conservativo", color: "text-emerald-400" };
+  if (pct <= 5) return { label: "Moderato", color: "text-sky-400" };
+  if (pct <= 10) return { label: "Dinamico", color: "text-amber-400" };
+  return { label: "Aggressivo", color: "text-red-400" };
+}
+
 export default function BitcoinSimulator() {
-  const [amount, setAmount] = useState(10000);
+  const [totalCapital, setTotalCapital] = useState(200000);
+  const [allocation, setAllocation] = useState(5);
   const [entryYear, setEntryYear] = useState(2020);
 
   const result = useMemo(() => {
-    const entryPrice = BTC_PRICES_EUR[entryYear];
-    const btcBought = amount / entryPrice;
-    const currentValue = btcBought * CURRENT_BTC_PRICE_EUR;
-    const returnPct = ((currentValue - amount) / amount) * 100;
-    return { currentValue, returnPct, btcBought };
-  }, [amount, entryYear]);
+    const btcAllocated = totalCapital * (allocation / 100);
+    const tradAllocated = totalCapital - btcAllocated;
+    const yearsElapsed = CURRENT_YEAR - entryYear;
+    const btcEntryPrice = BTC_PRICES_EUR[entryYear];
+
+    // Porzione BTC: crescita storica reale
+    const btcValueToday = (btcAllocated / btcEntryPrice) * CURRENT_BTC_PRICE_EUR;
+    const btcReturnPct = ((btcValueToday - btcAllocated) / btcAllocated) * 100;
+
+    // Porzione tradizionale: crescita composta al 3.5% annuo
+    const tradValueToday =
+      tradAllocated * Math.pow(1 + TRAD_ANNUAL_RETURN, yearsElapsed);
+
+    // Portafoglio CON BTC
+    const portfolioWithBtc = btcValueToday + tradValueToday;
+    const portfolioWithBtcReturn =
+      ((portfolioWithBtc - totalCapital) / totalCapital) * 100;
+
+    // Portafoglio SENZA BTC (tutto tradizionale)
+    const portfolioWithoutBtc =
+      totalCapital * Math.pow(1 + TRAD_ANNUAL_RETURN, yearsElapsed);
+    const portfolioWithoutBtcReturn =
+      ((portfolioWithoutBtc - totalCapital) / totalCapital) * 100;
+
+    // Impatto netto della componente BTC
+    const netImpact = portfolioWithBtc - portfolioWithoutBtc;
+    const netImpactPct = (netImpact / portfolioWithoutBtc) * 100;
+
+    // Peso BTC sul portafoglio attuale
+    const btcWeightNow = (btcValueToday / portfolioWithBtc) * 100;
+
+    return {
+      btcAllocated,
+      btcValueToday,
+      btcReturnPct,
+      tradValueToday,
+      portfolioWithBtc,
+      portfolioWithBtcReturn,
+      portfolioWithoutBtc,
+      portfolioWithoutBtcReturn,
+      netImpact,
+      netImpactPct,
+      btcWeightNow,
+      yearsElapsed,
+    };
+  }, [totalCapital, allocation, entryYear]);
 
   const years = Object.keys(BTC_PRICES_EUR).map(Number);
-  const isPositive = result.returnPct >= 0;
+  const allocations = [1, 3, 5, 10];
+  const riskProfile = getRiskProfile(allocation);
 
   return (
     <div className="space-y-8">
-      {/* Controlli */}
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Slider importo */}
+      {/* ── Controlli ── */}
+      <div className="space-y-6">
+        {/* Capitale totale */}
         <div>
-          <label className="block text-sm font-medium text-white/60 mb-3">
-            Importo ipotetico
-          </label>
+          <div className="flex items-center justify-between mb-2">
+            <label className="text-sm font-medium text-white/60">
+              Capitale totale ipotetico del portafoglio
+            </label>
+            <span className="text-xl font-heading font-bold text-white">
+              {formatEUR(totalCapital)}
+            </span>
+          </div>
           <input
             type="range"
-            min={5000}
-            max={100000}
-            step={1000}
-            value={amount}
-            onChange={(e) => setAmount(Number(e.target.value))}
+            min={50000}
+            max={1000000}
+            step={10000}
+            value={totalCapital}
+            onChange={(e) => setTotalCapital(Number(e.target.value))}
             className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-white/10 accent-[#3B95D9]"
           />
-          <div className="flex justify-between mt-2">
-            <span className="text-2xl font-heading font-bold text-white">
-              {formatEUR(amount)}
-            </span>
-            <span className="text-xs text-white/40 self-end">
-              max {formatEUR(100000)}
-            </span>
+          <div className="flex justify-between mt-1 text-xs text-white/30">
+            <span>{formatEUR(50000)}</span>
+            <span>{formatEUR(1000000)}</span>
           </div>
         </div>
 
-        {/* Selettore anno */}
-        <div>
-          <label className="block text-sm font-medium text-white/60 mb-3">
-            Se avessi investito a Gennaio...
-          </label>
-          <div className="flex flex-wrap gap-2">
-            {years.map((year) => (
-              <button
-                key={year}
-                onClick={() => setEntryYear(year)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  entryYear === year
-                    ? "bg-[#3B95D9] text-white shadow-[0_0_20px_-5px_rgba(59,149,217,0.4)]"
-                    : "bg-white/10 text-white/60 hover:bg-white/20 hover:text-white/80"
-                }`}
-              >
-                {year}
-              </button>
-            ))}
+        <div className="grid sm:grid-cols-2 gap-6">
+          {/* Allocazione BTC */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <label className="text-sm font-medium text-white/60">
+                Allocazione in Bitcoin
+              </label>
+              <span className={`text-sm font-medium ${riskProfile.color}`}>
+                {riskProfile.label}
+              </span>
+            </div>
+            <div className="flex gap-2">
+              {allocations.map((pct) => (
+                <button
+                  key={pct}
+                  onClick={() => setAllocation(pct)}
+                  className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 ${
+                    allocation === pct
+                      ? "bg-[#3B95D9] text-white shadow-[0_0_20px_-5px_rgba(59,149,217,0.4)]"
+                      : "bg-white/10 text-white/50 hover:bg-white/15 hover:text-white/70"
+                  }`}
+                >
+                  {pct}%
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Anno di ingresso */}
+          <div>
+            <label className="block text-sm font-medium text-white/60 mb-2">
+              Anno di ingresso ipotetico
+            </label>
+            <div className="flex gap-2">
+              {years.map((year) => (
+                <button
+                  key={year}
+                  onClick={() => setEntryYear(year)}
+                  className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 ${
+                    entryYear === year
+                      ? "bg-[#3B95D9] text-white shadow-[0_0_20px_-5px_rgba(59,149,217,0.4)]"
+                      : "bg-white/10 text-white/50 hover:bg-white/15 hover:text-white/70"
+                  }`}
+                >
+                  {year}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Risultato */}
+      {/* ── Risultati ── */}
       <motion.div
-        key={`${amount}-${entryYear}`}
-        initial={{ opacity: 0, scale: 0.98 }}
-        animate={{ opacity: 1, scale: 1 }}
+        key={`${totalCapital}-${allocation}-${entryYear}`}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="rounded-2xl bg-white/[0.04] border border-white/10 p-6 sm:p-8"
+        className="space-y-4"
       >
-        <div className="grid sm:grid-cols-3 gap-6 text-center">
-          <div>
-            <p className="text-xs text-white/40 mb-1 uppercase tracking-wider">
-              Investito a Gen {entryYear}
-            </p>
-            <p className="text-xl sm:text-2xl font-heading font-bold text-white">
-              {formatEUR(amount)}
-            </p>
-          </div>
-          <div>
-            <p className="text-xs text-white/40 mb-1 uppercase tracking-wider">
-              Valore a {CURRENT_DATE_LABEL}
-            </p>
-            <p
-              className={`text-xl sm:text-2xl font-heading font-bold ${
-                isPositive ? "text-emerald-400" : "text-red-400"
-              }`}
-            >
-              {formatEUR(Math.round(result.currentValue))}
-            </p>
-          </div>
-          <div>
-            <p className="text-xs text-white/40 mb-1 uppercase tracking-wider">
-              Rendimento
-            </p>
-            <div
-              className={`flex items-center justify-center gap-1.5 text-xl sm:text-2xl font-heading font-bold ${
-                isPositive ? "text-emerald-400" : "text-red-400"
-              }`}
-            >
-              {isPositive ? (
-                <TrendingUp className="w-5 h-5" />
-              ) : (
-                <TrendingDown className="w-5 h-5" />
-              )}
-              <span>
-                {isPositive ? "+" : ""}
-                {result.returnPct.toFixed(1)}%
-              </span>
+        {/* Confronto portafogli */}
+        <div className="grid md:grid-cols-2 gap-4">
+          {/* CON BTC */}
+          <div className="rounded-2xl bg-emerald-500/[0.08] border border-emerald-500/20 p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <PieChart className="w-4 h-4 text-emerald-400" />
+              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-wider">
+                Con allocazione BTC ({allocation}%)
+              </h4>
             </div>
+            <p className="text-2xl sm:text-3xl font-heading font-bold text-white mb-1">
+              {formatEUR(Math.round(result.portfolioWithBtc))}
+            </p>
+            <p className="text-sm text-emerald-400/80">
+              {formatPct(result.portfolioWithBtcReturn)} in{" "}
+              {result.yearsElapsed} anni
+            </p>
+            <div className="mt-4 pt-4 border-t border-white/10 space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-white/50">Componente BTC</span>
+                <span className="text-white font-medium">
+                  {formatEUR(Math.round(result.btcValueToday))}
+                  <span className="text-emerald-400/80 text-xs ml-1">
+                    ({formatPct(result.btcReturnPct)})
+                  </span>
+                </span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-white/50">Componente tradizionale</span>
+                <span className="text-white font-medium">
+                  {formatEUR(Math.round(result.tradValueToday))}
+                </span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-white/50">Peso BTC attuale</span>
+                <span className="text-white font-medium">
+                  {result.btcWeightNow.toFixed(1)}% del portafoglio
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* SENZA BTC */}
+          <div className="rounded-2xl bg-white/[0.04] border border-white/10 p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <BarChart3 className="w-4 h-4 text-white/40" />
+              <h4 className="text-sm font-bold text-white/40 uppercase tracking-wider">
+                100% tradizionale
+              </h4>
+            </div>
+            <p className="text-2xl sm:text-3xl font-heading font-bold text-white/60 mb-1">
+              {formatEUR(Math.round(result.portfolioWithoutBtc))}
+            </p>
+            <p className="text-sm text-white/30">
+              {formatPct(result.portfolioWithoutBtcReturn)} in{" "}
+              {result.yearsElapsed} anni
+            </p>
+            <div className="mt-4 pt-4 border-t border-white/10">
+              <p className="text-sm text-white/40">
+                Rendimento stimato: {(TRAD_ANNUAL_RETURN * 100).toFixed(1)}%
+                annuo composto (media portafoglio bilanciato obbligazioni/azioni).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Impatto netto */}
+        <div className="rounded-2xl bg-[#3B95D9]/10 border border-[#3B95D9]/30 p-6 text-center">
+          <p className="text-sm text-[#3B95D9]/80 mb-1 uppercase tracking-wider font-medium">
+            Impatto netto dell&apos;allocazione BTC sul portafoglio
+          </p>
+          <div className="flex items-center justify-center gap-3">
+            <TrendingUp
+              className={`w-6 h-6 ${
+                result.netImpact >= 0 ? "text-emerald-400" : "text-red-400"
+              }`}
+            />
+            <span
+              className={`text-3xl sm:text-4xl font-heading font-bold ${
+                result.netImpact >= 0 ? "text-emerald-400" : "text-red-400"
+              }`}
+            >
+              {result.netImpact >= 0 ? "+" : ""}
+              {formatEUR(Math.round(result.netImpact))}
+            </span>
+          </div>
+          <p className="text-sm text-white/50 mt-1">
+            {formatPct(result.netImpactPct)} rispetto al portafoglio senza BTC
+          </p>
+        </div>
+
+        {/* Barra composizione visiva */}
+        <div className="space-y-2">
+          <p className="text-xs text-white/40 uppercase tracking-wider">
+            Composizione attuale del portafoglio
+          </p>
+          <div className="h-3 rounded-full overflow-hidden flex bg-white/10">
+            <div
+              className="bg-[#3B95D9] transition-all duration-500 rounded-l-full"
+              style={{ width: `${Math.min(result.btcWeightNow, 100)}%` }}
+            />
+            <div
+              className="bg-white/20 transition-all duration-500"
+              style={{
+                width: `${Math.max(100 - result.btcWeightNow, 0)}%`,
+              }}
+            />
+          </div>
+          <div className="flex justify-between text-xs text-white/40">
+            <span>
+              Bitcoin: {result.btcWeightNow.toFixed(1)}%
+            </span>
+            <span>
+              Tradizionale: {(100 - result.btcWeightNow).toFixed(1)}%
+            </span>
           </div>
         </div>
       </motion.div>
 
-      {/* Disclaimer */}
+      {/* ── Disclaimer ── */}
       <div className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.04] border border-amber-500/20">
         <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
         <p className="text-xs text-white/40 leading-relaxed">
-          Simulazione basata su dati storici approssimativi del prezzo di Bitcoin
-          in EUR. I rendimenti passati non sono indicativi di risultati futuri.
-          Questa simulazione ha esclusivamente scopo educativo e informativo e non
-          costituisce sollecitazione all&apos;investimento, raccomandazione
-          finanziaria o invito all&apos;acquisto di alcuno strumento.
+          Simulazione basata su dati storici approssimativi (BTC in EUR) e un
+          rendimento ipotetico del{" "}
+          {(TRAD_ANNUAL_RETURN * 100).toFixed(1)}% annuo per la componente
+          tradizionale. I rendimenti passati non sono indicativi di risultati
+          futuri. Questo strumento ha esclusivamente scopo educativo e
+          informativo e non costituisce sollecitazione all&apos;investimento,
+          raccomandazione finanziaria o invito all&apos;acquisto di alcuno
+          strumento.
         </p>
       </div>
     </div>
