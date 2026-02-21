@@ -14,8 +14,8 @@ const src = join(root, "IMG", "Home_Computer.png");
 const outDir = join(root, "public", "IMG");
 const outWebp = join(outDir, "Home_Computer.webp");
 
-const MAX_WIDTH = 1200;
-const WEBP_QUALITY = 88;
+const MAX_WIDTH = 2400;
+const WEBP_QUALITY = 95;
 
 async function main() {
   if (!existsSync(src)) {
