@@ -100,8 +100,8 @@ export default function Home() {
                 <Image
                   src="/IMG/Home_Computer.webp"
                   alt="Interfaccia trading su MacBook in ambiente elegante"
-                  width={1200}
-                  height={670}
+                  width={2400}
+                  height={1340}
                   sizes="(min-width: 1024px) 488px, 90vw"
                   quality={100}
                   className="h-full w-full object-cover"
