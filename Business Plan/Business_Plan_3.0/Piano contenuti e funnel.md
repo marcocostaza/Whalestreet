@@ -21,28 +21,28 @@ Status: Done
 - Community crypto/Bitcoin.
 - Analisi di mercato brevi, thread educativi, spoiler di metodologie.
 
-### Funnel per il PRODOTTO (libreria + Oracolo)
+### Funnel Tier 1 — Ingresso qualificato (libreria + Oracolo, 300–500€/anno)
 
 ```
 Traffico (Organico / Ads)
     → Landing o Survey (interesse a formazione Bitcoin / metodo WhaleStreet)
-    → Offerta accesso prodotto (libreria + Oracolo): abbonamento o one-time
-    → Checkout o CTA per acquisto / prenotazione call di presentazione prodotto
+    → Offerta Tier 1: accesso libreria + Oracolo (300–500€/anno o one-time)
+    → Checkout o CTA per acquisto / prenotazione call di presentazione
 ```
 
-- **Nessun** lead magnet PDF generico a basso valore. L'esca può essere un periodo di prova del prodotto (es. con affiliazione XTB) o contenuti che portano alla landing prodotto.
-- Eventuale **Discovery Call** solo per qualificare chi accede a un tier premium o per presentare il prodotto a lead caldi; **non** per vendere ore 1-to-1 come default.
+- **Nessun** lead magnet PDF generico a basso valore. L'esca può essere un periodo di prova (es. con affiliazione XTB) o contenuti che portano alla landing Tier 1.
+- Eventuale **Discovery Call** per presentare Tier 1 a lead caldi; **non** per vendere ore 1-to-1 come default.
 
-### Funnel per la CONSULENZA (solo se offerta, su invito)
+### Funnel Tier 2 — Solo altolocati (consulenza su invito, Mattia, da 5.000€)
 
 ```
-Clienti prodotto qualificati o lead esterni pre-qualificati
+Clienti Tier 1 qualificati (che chiedono upgrade) OPPURE lead HNWI/aziende diretti
     → Sondaggio / candidatura (patrimonio, obiettivi)
-    → Se idonei → Calendary per Discovery Call (gestita da Mattia)
+    → Se idonei → Calendly per Discovery Call (gestita da Mattia)
     → Vendita High-Ticket consulenza al telefono
 ```
 
-- Capienza 1–3 clienti/anno; prezzo altissimo. Non è il funnel principale.
+- Capienza 1–3 clienti/anno; prezzo da 5.000€ in su. **Solo altolocati** sulla parte umana. Tier 1 alimenta il bacino di potenziali Tier 2.
 
 ### Contenuti da pubblicare
 

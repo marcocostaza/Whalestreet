@@ -5,19 +5,19 @@ Status: Done
 
 ### In una frase: cos'è il progetto e a chi si rivolge?
 
-**WhaleStreet** è un progetto formativo e di supporto verticale su Bitcoin e asset digitali, fondato da **Marco e Mattia**. Il cuore dell'offerta è un **prodotto scalabile**: accesso a una libreria di lezioni già registrate (~50) e a un **Oracolo** (AI nutrito con il nostro metodo) che risponde in modo coerente alle domande. A chi vuole un canale umano offriamo, su invito e a prezzo alto, consulenza e tutoring limitato (gestito da Mattia). Non siamo un'accademia di massa né una boutique che vende solo tempo 1-to-1: il valore principale è nel contenuto e nell'AI; la relazione diretta è opzionale.
+**WhaleStreet** è un progetto formativo e di supporto verticale su Bitcoin e asset digitali, fondato da **Marco e Mattia**, con un **modello ibrido a due tier**. **Tier 1 (ingresso qualificato):** accesso alla libreria delle ~50 lezioni già registrate e all'**Oracolo** (AI che risponde con il nostro metodo), a 300–500€/anno — sfruttiamo tutto ciò che abbiamo, qualifichiamo e generiamo testimonianze senza 1-to-1. **Tier 2 (solo altolocati):** consulenza e tutoring su invito (gestito da Mattia), da 5.000€ in su, 1–3 clienti/anno — teniamo solo clienti ad alto livello sulla parte umana. Non siamo un'accademia di massa né una boutique che vende solo tempo: il valore principale è nel contenuto e nell'AI (Tier 1); la relazione diretta è per pochi e su invito (Tier 2).
 
 ### Quali sono i due pilastri principali?
 
-**Pilastro 1 — Prodotto (contenuto + Oracolo):**
+**Pilastro 1 — Tier 1: Ingresso qualificato (contenuto + Oracolo):**
 
-- **Libreria di lezioni:** le ~50 lezioni già registrate diventano il prodotto (percorso/corso on-demand). Accesso a pagamento, senza tutoring incluso. Scalabile: zero tempo aggiuntivo per ogni nuovo cliente.
-- **Oracolo WhaleStreet:** NotebookLM (o interfaccia dedicata) nutrito con Business Plan, trascrizioni delle lezioni e fonti approvate. Risponde alle domande con il nostro metodo; riduce il bisogno di spiegazioni ripetute e supporta chi studia in autonomia.
+- **Libreria di lezioni:** le ~50 lezioni già registrate sono il cuore del Tier 1 (percorso/corso on-demand). Accesso a 300–500€/anno, senza tutoring 1-to-1 incluso. Sfruttiamo tutto ciò che abbiamo; scalabile.
+- **Oracolo WhaleStreet:** nutrito con Business Plan, trascrizioni e fonti approvate. Risponde con il nostro metodo; supporto primo livello (Mattia) con link a lezioni e risposte standardizzate. **Marco** su prodotto, Oracolo, marketing; zero 1-to-1.
 
-**Pilastro 2 — Canale umano (opzionale, gestito da Mattia):**
+**Pilastro 2 — Tier 2: Solo altolocati (canale umano, gestito da Mattia):**
 
-- Consulenza e tutoring **solo su invito**, prezzo altissimo, capienza rigidissima (es. 1–3 clienti/anno). Niente H24: X call o X ore definite.
-- **Mattia** si occupa di relazione, supporto clienti su prodotto/Oracolo, eventuale tutoring limitato e operatività. **Marco** si concentra su prodotto, Oracolo, posizionamento e marketing, senza legarsi a singoli clienti.
+- Consulenza e tutoring **solo su invito**, da 5.000€ in su, capienza 1–3 clienti/anno. X call o X ore definite, niente H24.
+- **Mattia** gestisce relazione, call, follow-up e operatività per Tier 2; supporto clienti Tier 1. **Marco** non è impegnato in tutoring 1-to-1.
 
 ### Cosa gestisci concretamente?
 

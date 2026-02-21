@@ -9,20 +9,20 @@ Status: Done
 - Tutoring H24 su chat privata come offerta standard per tutti.
 - Report mensili standardizzati per tutti.
 
-### Cosa offriamo (BP 3.0)
+### Cosa offriamo (BP 3.0 — Modello ibrido)
 
-### 1. Prodotto core: Libreria + Oracolo
+### Tier 1 — Ingresso qualificato (sfrutta ciò che avete già)
 
-- **Accesso alla libreria** delle ~50 lezioni (percorso/corso on-demand). Prezzo: abbonamento (es. annuale) o one-time, da definire in fase di lancio.
-- **Accesso all'Oracolo WhaleStreet:** interfaccia (es. nutrita da NotebookLM) che risponde alle domande usando il nostro metodo (Business Plan, trascrizioni lezioni, fonti approvate). Include o meno nel prezzo del prodotto a seconda del packaging.
-- Nessun tutoring 1-to-1 incluso: il valore è nel contenuto e nell'AI. Scalabile, zero tempo aggiuntivo per nuovo cliente.
+- **Cosa:** accesso alla **libreria** delle ~50 lezioni (percorso/corso on-demand) + **Oracolo WhaleStreet** (NotebookLM o interfaccia che risponde con il nostro metodo). Nessun tutoring 1-to-1 incluso; supporto primo livello (Mattia: risposte standardizzate, link a lezioni/Oracolo).
+- **Prezzo:** **300–500€/anno** (o one-time equivalente). Barriera che qualifica: non è "corso a 50€", è "member/studente del metodo WhaleStreet". Scalabile, zero tempo 1-to-1 di Marco per nuovo cliente.
+- **Chi:** chi vuole formarsi su Bitcoin e asset digitali con il vostro metodo senza (ancora) chiedere consulenza. Genera revenue, testimonianze e un bacino da cui attingere per il Tier 2.
 
-### 2. Consulenza e tutoring (solo su invito, gestita da Mattia)
+### Tier 2 — Solo altolocati (la parte umana)
 
-- **Quando:** solo se il cliente è pre-qualificato e invitatо; capienza rigidissima (es. 1–3 clienti/anno).
-- **Cosa:** affiancamento limitato (X call o X ore definite), non H24; asset allocation su misura, protocolli operativi, supporto su self-custody e yield; eventuale Corporate Treasury B2B.
-- **Chi:** **Mattia** gestisce relazione, call e follow-up. Marco non è impegnato in tutoring 1-to-1.
-- **Prezzo:** altissimo (es. da 5.000€ in su per semestre/pacchetto), dissuasivo per chi cerca "un po' di consulenza". Solo High-Ticket.
+- **Cosa:** consulenza e tutoring **solo su invito**: asset allocation su misura, protocolli operativi, supporto self-custody e yield, eventuale Corporate Treasury B2B. X call o X ore definite, **niente H24**.
+- **Quando:** solo se il cliente è pre-qualificato (survey, patrimonio, obiettivi) e invitatо; capienza rigidissima (1–3 clienti/anno). Possono essere clienti Tier 1 che chiedono upgrade oppure lead HNWI/aziende diretti.
+- **Chi gestisce:** solo **Mattia**. Marco non è impegnato in tutoring 1-to-1.
+- **Prezzo:** **da 5.000€ in su** (semestre/pacchetto o offerta personalizzata). Solo High-Ticket.
 
 ### 3. Tecnologia
 
@@ -31,8 +31,8 @@ Status: Done
 
 ### Prezzi (sintesi)
 
-- **Prodotto (libreria + Oracolo):** abbonamento o one-time, fascia da definire (es. 50–150€/anno o equivalente one-time). Obiettivo: volume e retention senza tempo 1-to-1.
-- **Consulenza (su invito):** a partire da 5.000€ (o offerta personalizzata), pacchetti semestrali/annuali, numero chiuso.
+- **Tier 1 (ingresso qualificato):** 300–500€/anno (o one-time equivalente). Libreria + Oracolo. Obiettivo: sfruttare le 50 lezioni, qualificare, generare testimonianze e funnel verso Tier 2.
+- **Tier 2 (solo altolocati):** a partire da 5.000€, pacchetti semestrali/annuali, numero chiuso (1–3 clienti/anno). Consulenza/tutoring Mattia su invito.
 
 ### Strategia "Esca" (opzionale)
 
