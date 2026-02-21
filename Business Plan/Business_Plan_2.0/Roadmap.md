@@ -30,3 +30,7 @@ Status: Done
 ---
 
 **Nota:** Nessun KPI basato sui grandi numeri (15, 50, 100 iscritti). L'obiettivo è la qualità del rapporto e la retention, non il volume.
+
+---
+
+**Nota operativa (piano d'azione e task):** Il piano d'azione e le task (Notion e altri database) vanno **allineati** a questa Roadmap (Q1–Q4). Obiettivo operativo: **go-live inizio marzo** con qualcosa di pronto (sito vetrina + CTA); poi integrazioni, Ads, ecc. Ordine e scadenze si definiscono con **studio approfondito** (dipendenze, priorità); le date vanno ricalibrate per portare al successo, senza vincoli artificiali di ore/giorno.
