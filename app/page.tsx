@@ -98,10 +98,12 @@ export default function Home() {
             >
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-primary/20 dark:border-accent/20">
                 <Image
-                  src="/IMG/Home_Computer.png"
+                  src="/IMG/Home_Computer.webp"
                   alt="Interfaccia trading su MacBook in ambiente elegante"
-                  width={488}
-                  height={366}
+                  width={1200}
+                  height={670}
+                  sizes="(min-width: 1024px) 488px, 90vw"
+                  quality={100}
                   className="h-full w-full object-cover"
                 />
               </div>
