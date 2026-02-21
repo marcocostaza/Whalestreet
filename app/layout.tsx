@@ -20,25 +20,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WhaleStreet – Il Tuo Faro verso l'Indipendenza Finanziaria",
+  title: "WhaleStreet – Protezione e Rendimento per Capitali Importanti",
   description:
-    "WhaleStreet è un'accademia formativa italiana verticale nel comparto Crypto. Formazione avanzata potenziata dall'Intelligenza Artificiale per investimenti consapevoli su Bitcoin e Cryptovalute.",
+    "Boutique di consulenza sartoriale 1-to-1 e tutoring operativo su Bitcoin e Asset Digitali per HNWI e Tesorerie Aziendali. Oltre il sistema bancario.",
   keywords: [
-    "crypto",
     "bitcoin",
-    "trading",
-    "formazione",
-    "intelligenza artificiale",
-    "investimenti",
-    "finanza",
+    "asset allocation",
+    "HNWI",
+    "consulenza bitcoin",
+    "corporate treasury",
+    "self-custody",
+    "protezione capitale",
+    "tutoring bitcoin",
+    "high net worth",
   ],
   authors: [{ name: "WhaleStreet" }],
   openGraph: {
-    title: "WhaleStreet – Accademia Crypto/AI",
+    title: "WhaleStreet – Protezione e Rendimento per Capitali Importanti",
     description:
-      "Formazione avanzata su Bitcoin e Crypto potenziata dall'Intelligenza Artificiale",
+      "Boutique di consulenza sartoriale 1-to-1 su Bitcoin e Asset Digitali per HNWI e Tesorerie Aziendali.",
     type: "website",
     locale: "it_IT",
+    url: "https://whalestreet.website",
   },
 };
 
@@ -63,11 +66,6 @@ export default function RootLayout({
             `,
           }}
         />
-        <link
-          rel="stylesheet"
-          href="https://sibforms.com/forms/end-form/build/sib-styles.css"
-        />
-        <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
       </head>
       <body>
         <ThemeProvider>
@@ -75,20 +73,6 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-              window.LOCALE = 'en';
-              window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Si prega di rivedere il formato del campo e riprovare.";
-              window.REQUIRED_ERROR_MESSAGE = "Questo campo non può essere lasciato vuoto. ";
-              window.GENERIC_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Si prega di rivedere il formato del campo e riprovare.";
-              window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected', selectedOption: '{quantity} selected', selectedOptions: '{quantity} selected' } };
-              var AUTOHIDE = Boolean(1);
-            `,
-          }}
-        />
-        <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
       </body>
     </html>
   );

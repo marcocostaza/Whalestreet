@@ -1,208 +1,223 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Users, Brain, GraduationCap, MessageSquare, FileText } from "lucide-react";
+import { ArrowRight, Shield, Wallet, Building2, Users, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 },
+};
+
+const fadeInView = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6 },
+};
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-background-light to-background-light-alt dark:from-background-dark dark:to-background-dark-alt">
+      {/* ============================================= */}
+      {/* SEZIONE A: HERO */}
+      {/* ============================================= */}
+      <section className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-background-light to-primary-lighter dark:from-background-dark dark:to-background-dark-alt">
         {/* Glow effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute top-1/3 -left-32 w-64 h-64 bg-accent/15 rounded-full blur-[80px] pointer-events-none" />
         <div className="absolute bottom-1/4 -right-32 w-72 h-72 bg-accent/15 rounded-full blur-[80px] pointer-events-none" />
 
-        <div className="relative max-w-5xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 flex justify-center"
-          >
-            <Image
-              src="/images/WhaleStreet_Logo_Colored.png"
-              alt="WhaleStreet – Logo del brand"
-              width={320}
-              height={200}
-              className="w-full max-w-xs mx-auto object-contain dark:hidden"
-              priority
-            />
-            <Image
-              src="/images/WhaleStreet_Logo_White.png"
-              alt="WhaleStreet – Logo del brand"
-              width={320}
-              height={200}
-              className="w-full max-w-xs mx-auto object-contain hidden dark:block"
-              priority
-            />
-          </motion.div>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Copy */}
+            <div>
+              <motion.h1
+                {...fadeInUp}
+                className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-text-primary dark:text-text-dark mb-6 leading-tight"
+              >
+                Protezione e Rendimento per Capitali Importanti.{" "}
+                <span className="text-primary dark:text-accent">
+                  Oltre il Sistema Bancario.
+                </span>
+              </motion.h1>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-text-primary dark:text-text-dark mb-6 leading-tight"
-          >
-            WhaleStreet: Il Tuo Faro nella Navigazione Verso l&apos;Indipendenza Finanziaria
-          </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="text-lg sm:text-xl text-text-primary/80 dark:text-text-dark/80 mb-10 leading-relaxed"
+              >
+                Boutique di consulenza sartoriale 1-to-1 e tutoring operativo su
+                Bitcoin e Asset Digitali per HNWI e Tesorerie Aziendali.
+              </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-text-primary/80 dark:text-text-dark/80 max-w-2xl mx-auto mb-10"
-          >
-            Formazione avanzata su Bitcoin e Crypto potenziata dall&apos;Intelligenza Artificiale.
-            Inizia il tuo percorso di crescita attraverso una rotta guidata.
-          </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <Button variant="accent" size="lg" className="text-base px-8 py-6" asChild>
+                  <Link href="#applica">
+                    Prenota una Discovery Call
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </motion.div>
+            </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Button variant="accent" size="lg" asChild>
-              <Link href="/academy">
-                Inizia il tuo percorso
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link href="#newsletter">Iscriviti alla newsletter</Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* I due Pilastri */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light dark:bg-background-dark">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl font-heading font-bold text-center mb-12 text-text-primary dark:text-text-dark"
-          >
-            I due Pilastri
-          </motion.h2>
-
-          <div className="grid sm:grid-cols-2 gap-8">
+            {/* Hero Image Placeholder */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="hidden lg:block"
             >
-              <Card className="h-full border-2 hover:border-primary/50 dark:hover:border-primary/70 transition-colors bg-card dark:bg-card">
-                <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-4">
-                    <Users className="w-7 h-7 text-primary dark:text-accent" />
-                  </div>
-                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">Supporto Umano</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
-                    Supporto presente e costante attraverso chat, live ed eventi che forniscono
-                    assistenza diretta allo studente. Un contatto stretto con la community tramite
-                    live e canali Telegram per risolvere problemi e rispondere alle domande.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card className="h-full border-2 hover:border-secondary/50 dark:hover:border-secondary/70 transition-colors bg-card dark:bg-card">
-                <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center mb-4">
-                    <Brain className="w-7 h-7 text-secondary dark:text-accent-purple" />
-                  </div>
-                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">Formazione AI</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
-                    Eliminiamo il classico &quot;videocorso registrato&quot; con strumenti di formazione
-                    personalizzata. Creazione di contenuti testuali, audio e video ad hoc in base
-                    alle necessità dello studente, con chatbot e applicativi personalizzati.
-                  </CardDescription>
-                </CardContent>
-              </Card>
+              <div className="aspect-[4/3] rounded-2xl bg-background-dark-alt dark:bg-[#0A1A29] border border-primary/20 dark:border-accent/20 flex items-center justify-center p-8">
+                <p className="text-center text-text-dark/60 font-sans text-sm leading-relaxed">
+                  [Placeholder: Interfaccia trading pulita su MacBook in ambiente elegante]
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Chi Siamo */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light-alt dark:bg-background-dark-alt">
-        <div className="max-w-6xl mx-auto">
+      {/* ============================================= */}
+      {/* SEZIONE B: IL PROBLEMA & COSTO OPPORTUNITA */}
+      {/* ============================================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#152C42] dark:bg-[#152C42]">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2
+            {...fadeInView}
+            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white mb-8"
+          >
+            Il costo del denaro fermo.
+          </motion.h2>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="space-y-6"
           >
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-text-primary dark:text-text-dark">
-              Chi Siamo
-            </h2>
-            <p className="text-lg text-text-primary/70 dark:text-text-dark/70 max-w-3xl mx-auto">
-              WhaleStreet è una realtà formativa italiana fondata e gestita da professionisti ed
-              amatori del settore che operano personalmente sugli asset digitali. Il progetto nasce
-              verticale nel comparto Crypto e si rivolge ad un pubblico di interessati agli
-              investimenti di breve, medio e lungo periodo focalizzato su Bitcoin e Cryptovalute.
+            <p className="text-lg sm:text-xl text-white/85 leading-relaxed">
+              L&apos;inflazione erode il tuo potere d&apos;acquisto. I rendimenti bancari
+              tradizionali non coprono le perdite reali.
             </p>
+            <p className="text-lg sm:text-xl text-white/85 leading-relaxed">
+              Non allocare correttamente il tuo capitale significa perdere opportunit&agrave;
+              matematiche in termini di yield e protezione.
+            </p>
+            <div className="pt-4">
+              <p className="text-accent font-heading font-bold text-xl sm:text-2xl">
+                Non allocare correttamente 50.000&euro; costa migliaia di euro all&apos;anno
+                in mancate performance.
+              </p>
+            </div>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid sm:grid-cols-2 gap-8">
+      {/* ============================================= */}
+      {/* SEZIONE C: I NOSTRI SERVIZI */}
+      {/* ============================================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary-lighter dark:bg-background-dark">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            {...fadeInView}
+            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-center mb-4 text-text-primary dark:text-text-dark"
+          >
+            I nostri servizi
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center text-text-primary/70 dark:text-text-dark/70 mb-12 max-w-2xl mx-auto"
+          >
+            Soluzioni sartoriali per chi cerca protezione e rendimento
+            su capitali importanti.
+          </motion.p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0 }}
+            >
+              <Card className="h-full border-2 hover:border-primary/50 dark:hover:border-accent/50 transition-all duration-300 bg-card dark:bg-card hover:shadow-glow-sm">
+                <CardHeader>
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 dark:bg-accent/20 flex items-center justify-center mb-4">
+                    <Shield className="w-7 h-7 text-primary dark:text-accent" />
+                  </div>
+                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">
+                    Private Tutoring Pathway
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
+                    Affiancamento 1-to-1 su chat privata. Nessun corso di gruppo, solo
+                    consulenza operativa diretta e riservata.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Card 2 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="bg-card dark:bg-card">
+              <Card className="h-full border-2 hover:border-primary/50 dark:hover:border-accent/50 transition-all duration-300 bg-card dark:bg-card hover:shadow-glow-sm">
                 <CardHeader>
-                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">Marco</CardTitle>
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 dark:bg-accent/20 flex items-center justify-center mb-4">
+                    <Wallet className="w-7 h-7 text-primary dark:text-accent" />
+                  </div>
+                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">
+                    Bitcoin Asset Allocation
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
-                    5 anni di esperienza nell&apos;educazione finanziaria e profonda conoscenza
-                    dell&apos;ecosistema Bitcoin. Gode di una certa autorevolezza nell&apos;ambiente
-                    ed ha già una base di persone che lo segue costantemente sui suoi social. Ha
-                    parecchi contatti nell&apos;ambiente crypto.
-                  </CardDescription>
+                  <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
+                    Creazione di portafogli su misura fortemente sbilanciati su BTC.
+                    Istruzioni operative per la self-custody sicura.
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
 
+            {/* Card 3 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="sm:col-span-2 lg:col-span-1"
             >
-              <Card className="bg-card dark:bg-card">
+              <Card className="h-full border-2 hover:border-primary/50 dark:hover:border-accent/50 transition-all duration-300 bg-card dark:bg-card hover:shadow-glow-sm">
                 <CardHeader>
-                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">Mattia</CardTitle>
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 dark:bg-accent/20 flex items-center justify-center mb-4">
+                    <Building2 className="w-7 h-7 text-primary dark:text-accent" />
+                  </div>
+                  <CardTitle className="text-xl font-heading text-foreground dark:text-foreground">
+                    Corporate Treasury (B2B)
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
-                    5 anni di esperienza attiva nel mercato crypto con oltre 1.000 operazioni
-                    eseguite e centinaia di migliaia di dollari investiti. Ha previsto la bull run
-                    di Bitcoin da inizio 2023 e identificato correttamente il cambio di trend nel
-                    Q4 2025. Ha analizzato oltre 200 progetti crypto a livello fondamentale.
-                  </CardDescription>
+                  <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
+                    Diversificazione della tesoreria aziendale in Bitcoin e stablecoin
+                    per yield passivo istituzionale e protezione del capitale.
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -210,309 +225,215 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* ============================================= */}
+      {/* SEZIONE D: IL NOSTRO METODO */}
+      {/* ============================================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-light dark:bg-background-dark-alt">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            {...fadeInView}
+            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-center mb-12 text-text-primary dark:text-text-dark"
+          >
+            Come operiamo
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Pilastro 1 */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Users className="w-7 h-7 text-primary dark:text-accent" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary dark:text-text-dark">
+                  Supporto Umano Sartoriale
+                </h3>
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed text-text-primary/80 dark:text-text-dark/80">
+                Marco e Mattia trasferiscono competenza operativa reale,
+                con oltre 5 anni di esperienza e 1.000+ operazioni a mercato.
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed text-text-primary/80 dark:text-text-dark/80">
+                Nessun intermediario, nessun corso pre-registrato. Ogni cliente
+                ha un percorso personalizzato con affiancamento diretto su chat privata,
+                chiamate strategiche e protocolli operativi chiari.
+              </p>
+
+              {/* Placeholder immagine */}
+              <div className="aspect-[16/9] rounded-xl bg-background-dark-alt dark:bg-[#0A1A29] border border-primary/20 dark:border-accent/20 flex items-center justify-center p-6 mt-4">
+                <p className="text-center text-text-dark/60 font-sans text-sm">
+                  [Placeholder: Ritratti professionali dei founder Marco e Mattia in ambiente ufficio moderno]
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Pilastro 2 */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 rounded-xl bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                  <Brain className="w-7 h-7 text-secondary dark:text-accent-purple" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-text-primary dark:text-text-dark">
+                  Tecnologia AI su Misura
+                </h3>
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed text-text-primary/80 dark:text-text-dark/80">
+                Utilizziamo Oracoli AI interni per standardizzare il metodo e garantire
+                risposte coerenti, basate su fonti verificate e sul nostro Business Plan.
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed text-text-primary/80 dark:text-text-dark/80">
+                Creiamo dashboard e script personalizzati (es. TradingView) costruiti
+                unicamente per il singolo cliente. Non tool generici, ma strumenti
+                su misura per le tue esigenze specifiche.
+              </p>
+
+              {/* Placeholder immagine */}
+              <div className="aspect-[16/9] rounded-xl bg-background-dark-alt dark:bg-[#0A1A29] border border-secondary/20 dark:border-accent-purple/20 flex items-center justify-center p-6 mt-4">
+                <p className="text-center text-text-dark/60 font-sans text-sm">
+                  [Placeholder: Grafico Bitcoin con sovrapposizione di nodi neurali AI]
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================= */}
+      {/* SEZIONE E: CASI STUDIO */}
+      {/* ============================================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary-lighter dark:bg-background-dark">
+        <div className="max-w-4xl mx-auto">
+          <motion.h2
+            {...fadeInView}
+            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-center mb-12 text-text-primary dark:text-text-dark"
+          >
+            Casi Studio
+          </motion.h2>
+
+          <div className="space-y-8">
+            {/* Caso 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="bg-card dark:bg-card border-l-4 border-l-accent">
+                <CardContent className="p-8">
+                  <p className="text-sm font-medium text-accent dark:text-accent mb-2 font-heading uppercase tracking-wider">
+                    Caso Studio #1
+                  </p>
+                  <h3 className="text-lg sm:text-xl font-heading font-bold text-foreground dark:text-foreground mb-4">
+                    Imprenditore tech alloca 50k in self-custody
+                  </h3>
+                  <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
+                    Imprenditore nel settore tecnologico, 42 anni, con liquidit&agrave; ferma in
+                    conto corrente. Attraverso il Private Tutoring Pathway ha costruito
+                    un portafoglio Bitcoin in self-custody con protocollo di sicurezza
+                    personalizzato, raggiungendo autonomia operativa completa in 8 settimane.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Caso 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Card className="bg-card dark:bg-card border-l-4 border-l-accent">
+                <CardContent className="p-8">
+                  <p className="text-sm font-medium text-accent dark:text-accent mb-2 font-heading uppercase tracking-wider">
+                    Caso Studio #2
+                  </p>
+                  <h3 className="text-lg sm:text-xl font-heading font-bold text-foreground dark:text-foreground mb-4">
+                    Professionista diversifica 30k tra BTC e yield su stablecoin
+                  </h3>
+                  <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
+                    Libero professionista, 55 anni, preoccupato dall&apos;erosione del capitale
+                    in banca. Con il servizio di Bitcoin Asset Allocation ha strutturato
+                    un piano bilanciato tra BTC per la rivalutazione a lungo termine e
+                    stablecoin per generare yield passivo, superando i rendimenti dei
+                    classici strumenti bancari.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================= */}
+      {/* SEZIONE F: CTA FINALE (FUNNEL) */}
+      {/* ============================================= */}
       <section
-        id="newsletter"
-        className="pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-border dark:border-border bg-background-light dark:bg-background-dark"
-        aria-label="Newsletter"
+        id="applica"
+        className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1E1636] dark:bg-[#1E1636] relative overflow-hidden"
       >
-        <div className="max-w-xl mx-auto">
+        {/* Glow decorativo */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-purple/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="relative max-w-3xl mx-auto text-center">
+          <motion.h2
+            {...fadeInView}
+            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white mb-6"
+          >
+            Pronto a proteggere il tuo patrimonio?
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg sm:text-xl text-white/80 mb-10 leading-relaxed"
+          >
+            Lavoriamo solo con clienti selezionati con un capitale da allocare
+            superiore a 30.000&euro;. Compila il questionario per verificare
+            l&apos;idoneit&agrave; e sbloccare il calendario.
+          </motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-text-primary dark:text-text-dark">
-              Resta aggiornato
-            </h2>
-            <p className="text-text-primary/70 dark:text-text-dark/70">
-              Ricevi analisi, guide operative e approfondimenti.
-            </p>
+            <Button
+              variant="accent"
+              size="lg"
+              className="text-base sm:text-lg px-10 py-7 shadow-glow hover:shadow-[0_0_80px_-15px_rgba(59,149,217,0.5)] transition-shadow duration-300"
+              asChild
+            >
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                Inizia il Questionario di Pre-Qualificazione
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
           </motion.div>
 
-          {/* Brevo Form - mantenuto dall'HTML esistente */}
-          <div className="sib-form" style={{ textAlign: "center" }}>
-            <div
-              id="sib-container"
-              className="sib-container--large sib-container--vertical"
-              style={{
-                textAlign: "center",
-                maxWidth: "540px",
-                margin: "0 auto",
-                direction: "ltr",
-                borderRadius: "1.25rem",
-                border: "1px solid rgba(220, 233, 242, 0.5)",
-                background: "rgba(255, 255, 255, 0.96)",
-                boxShadow: "0 4px 24px rgba(0, 0, 0, 0.15)",
-                overflow: "hidden",
-                padding: "1.5rem",
-              }}
-            >
-              <form
-                id="sib-form"
-                method="POST"
-                action="https://8b8e18d7.sibforms.com/serve/MUIFAFIuxtZsDR3Ol5BAtSxYNIxPcwo0DyFFNhqRjFdYll_o0dig1t4C-8k2XY1yBMhHEY-9thETBvdOx_Lx2j9n-uaQZVa6zrv1f-HikKsi6iivVeIyJBLawxZrE2L0rXawT-SSj_k829cjq-Tv5WVIxCWJAYv5MWgPyjR1O20X9JMO3OqotqV0OKnfiINMqT9ljfniiaKUgSjJ7w=="
-                data-type="subscription"
-              >
-                <div style={{ padding: "8px 0" }}>
-                  <div
-                    className="sib-form-block"
-                    style={{
-                      fontSize: "32px",
-                      textAlign: "left",
-                      fontWeight: "700",
-                      fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                      color: "#3C4858",
-                      background: "transparent",
-                    }}
-                  >
-                    <p>Resta aggiornato</p>
-                  </div>
-                </div>
-                <div style={{ padding: "8px 0" }}>
-                  <div
-                    className="sib-form-block"
-                    style={{
-                      fontSize: "16px",
-                      textAlign: "left",
-                      fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                      color: "#3C4858",
-                      background: "transparent",
-                    }}
-                  >
-                    <div className="sib-text-form-block">
-                      <p>Ricevi analisi, guide operative e approfondimenti.</p>
-                    </div>
-                  </div>
-                </div>
-                <div style={{ padding: "8px 0" }}>
-                  <div className="sib-input sib-form-block">
-                    <div className="form__entry entry_block">
-                      <div className="form__label-row">
-                        <div className="entry__field">
-                          <input
-                            className="input"
-                            type="text"
-                            id="EMAIL"
-                            name="EMAIL"
-                            autoComplete="off"
-                            placeholder="EMAIL"
-                            data-required="true"
-                            required
-                            style={{
-                              borderRadius: "0.75rem",
-                              padding: "0.75rem",
-                              border: "1px solid #DCE9F2",
-                              width: "100%",
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div style={{ padding: "8px 0" }}>
-                  <div className="sib-checkbox-group sib-form-block" data-required="true">
-                    <div className="form__entry entry_mcq">
-                      <div className="form__label-row">
-                        <label
-                          className="entry__label"
-                          style={{
-                            fontWeight: "700",
-                            textAlign: "left",
-                            fontSize: "16px",
-                            fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                            color: "#3c4858",
-                          }}
-                          data-required="*"
-                        >
-                          Seleziona le e-mail che ti piacerebbe ricevere
-                        </label>
-                        <div>
-                          <div className="entry__choice">
-                            <label className="checkbox__label">
-                              <input
-                                type="checkbox"
-                                className="input_replaced"
-                                name="TIPOLOGIA_DI_NEWS[]"
-                                data-value="🎓 Guide e approfondimenti"
-                                value="🎓 Guide e approfondimenti"
-                                data-required="true"
-                              />
-                              <span className="checkbox checkbox_tick_positive"></span>
-                              <span
-                                style={{
-                                  fontSize: "16px",
-                                  textAlign: "left",
-                                  fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                                  color: "#3C4858",
-                                }}
-                              >
-                                🎓 Guide e approfondimenti
-                              </span>
-                            </label>
-                          </div>
-                          <div className="entry__choice">
-                            <label className="checkbox__label">
-                              <input
-                                type="checkbox"
-                                className="input_replaced"
-                                name="TIPOLOGIA_DI_NEWS[]"
-                                data-value="🎁 Offerte, sconti e bonus"
-                                value="🎁 Offerte, sconti e bonus"
-                                data-required="true"
-                              />
-                              <span className="checkbox checkbox_tick_positive"></span>
-                              <span
-                                style={{
-                                  fontSize: "16px",
-                                  textAlign: "left",
-                                  fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                                  color: "#3C4858",
-                                }}
-                              >
-                                🎁 Offerte, sconti e bonus
-                              </span>
-                            </label>
-                          </div>
-                          <div className="entry__choice">
-                            <label className="checkbox__label">
-                              <input
-                                type="checkbox"
-                                className="input_replaced"
-                                name="TIPOLOGIA_DI_NEWS[]"
-                                data-value="📰 News e consigli di attualità"
-                                value="📰 News e consigli di attualità"
-                                data-required="true"
-                              />
-                              <span className="checkbox checkbox_tick_positive"></span>
-                              <span
-                                style={{
-                                  fontSize: "16px",
-                                  textAlign: "left",
-                                  fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                                  color: "#3C4858",
-                                }}
-                              >
-                                📰 News e consigli di attualità
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div style={{ padding: "8px 0" }}>
-                  <div className="sib-optin sib-form-block" data-required="true">
-                    <div className="form__entry entry_mcq">
-                      <div className="form__label-row">
-                        <div className="entry__choice">
-                          <label>
-                            <input
-                              type="checkbox"
-                              className="input_replaced"
-                              value="1"
-                              id="OPT_IN"
-                              name="OPT_IN"
-                              required
-                            />
-                            <span className="checkbox checkbox_tick_positive"></span>
-                            <span
-                              style={{
-                                fontSize: "14px",
-                                textAlign: "left",
-                                fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                                color: "#3C4858",
-                              }}
-                            >
-                              <p>Accetto l&apos;informativa sulla privacy dei dati.</p>
-                              <span data-required="*" style={{ display: "inline" }}></span>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                      <label
-                        className="entry__specification"
-                        style={{
-                          fontSize: "12px",
-                          textAlign: "left",
-                          fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                          color: "#8390A4",
-                        }}
-                      >
-                        Puoi annullare l&apos;iscrizione in qualsiasi momento utilizzando il link
-                        nella newsletter.
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div style={{ padding: "8px 0" }}>
-                  <div className="sib-form-block" style={{ textAlign: "left" }}>
-                    <button
-                      className="sib-form-block__button sib-form-block__button-with-loader"
-                      style={{
-                        fontSize: "16px",
-                        textAlign: "left",
-                        fontWeight: "700",
-                        fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                        color: "#FFFFFF",
-                        background: "#3B95D9",
-                        borderRadius: "0.75rem",
-                        borderWidth: "0px",
-                        padding: "0.75rem 1.5rem",
-                        width: "100%",
-                        cursor: "pointer",
-                      }}
-                      form="sib-form"
-                      type="submit"
-                    >
-                      ISCRIVITI
-                    </button>
-                  </div>
-                </div>
-                <div style={{ padding: "8px 0" }}>
-                  <div className="sib-form__declaration" style={{ direction: "ltr" }}>
-                    <div
-                      style={{
-                        fontSize: "14px",
-                        textAlign: "left",
-                        fontFamily: "var(--font-inter), Helvetica, sans-serif",
-                        color: "#687484",
-                        background: "transparent",
-                      }}
-                    >
-                      <p>
-                        We use Brevo as our marketing platform. By submitting this form you agree
-                        that the personal data you provided will be transferred to Brevo for
-                        processing in accordance with{" "}
-                        <a
-                          href="https://www.brevo.com/en/legal/privacypolicy/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#3B95D9" }}
-                        >
-                          Brevo&apos;s Privacy Policy.
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div style={{ padding: "8px 0" }}>
-                  <div
-                    className="g-recaptcha"
-                    data-sitekey="6LeGQVwsAAAAAJfpAc4_DywDxMdzyRxlR8M5hMVr"
-                    data-callback="invisibleCaptchaCallback"
-                    data-size="invisible"
-                  ></div>
-                </div>
-                <input type="text" name="email_address_check" value="" className="input--hidden" />
-                <input type="hidden" name="locale" value="en" />
-              </form>
-            </div>
-          </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-6 text-sm text-white/50"
+          >
+            Tempo stimato: 2 minuti. I tuoi dati sono trattati con massima riservatezza.
+          </motion.p>
         </div>
       </section>
     </div>
