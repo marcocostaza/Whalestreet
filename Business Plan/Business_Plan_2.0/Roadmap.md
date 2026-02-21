@@ -30,3 +30,7 @@ Status: Done
 ---
 
 **Nota:** Nessun KPI basato sui grandi numeri (15, 50, 100 iscritti). L'obiettivo è la qualità del rapporto e la retention, non il volume.
+
+---
+
+**Nota operativa (piano d'azione e task):** Il piano d'azione e le task (Notion e altri database) vanno **allineati** a questa Roadmap: stesso quadro temporale (Q1–Q4) e stessi obiettivi. L'ordine concreto delle attività e le scadenze vanno però definiti con **studio approfondito**: dipendenze, priorità, e vincolo di capacità (~1h/giorno). Le date nelle task vanno calibrate in modo fattibile, non solo in base al trimestre.
