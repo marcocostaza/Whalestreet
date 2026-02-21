@@ -25,8 +25,6 @@ L’immagine principale che richiama il logo è la “Whale”, che in gergo fin
 
 ---
 
-La scala dei Blu è quella dei colori primari.
-
 #0A1A29
 
 - Abyss Black
@@ -87,8 +85,6 @@ La scala dei Blu è quella dei colori primari.
 
 ---
 
-La scala dei viola è quella dei colori secondari.
-
 #120D26
 
 - Cosmic Void
@@ -145,20 +141,6 @@ La scala dei viola è quella dei colori secondari.
 
 ---
 
-### Regole di contrasto e gerarchia colori
-
-**Regole di contrasto e testo:**
-
-- **Testo Principale:** Grigio scuro (`#212121`) per le pagine con sfondo chiaro (Arctic Foam/Stardust White).
-- **Testo su Dark Mode:** Bianco puro (`#FFFFFF`) per le pagine con sfondo scuro (Midnight Trench/Deep Nebula).
-
-**Gerarchia Blu e Viola:**
-
-- **Colori Primari (Base del brand):** La scala dei Blu. Il _Whale Street Blue_ (`#466F9D`) è il colore principale per i titoli importanti e il branding generale.
-- **Colori Secondari/Accento (Elementi speciali):** La scala dei Viola. Il _Royal Anchor_ (`#523EB2`) e l'_Electric Amethyst_ (`#8A64FF`) vengono usati **solo** per evidenziare elementi specifici, come ad esempio i badge delle funzionalità AI, i bottoni secondari o elementi grafici che devono risaltare.
-
----
-
 ![Purple Scale.png](Purple_Scale.png)
 
 ---
@@ -172,6 +154,18 @@ La scala dei viola è quella dei colori secondari.
 ### Se il brand fosse una persona: come la descriveresti in 3 aggettivi?
 
 Se il brand fosse una persona la descriverei con questi 3 aggettivi: smart (intelligente, lucido, tagliente), carismatica (attrae, che sa ascoltare, disponibile), affidabile (trasparente, chiara, diretta).
+
+### Regole di contrasto e gerarchia colori
+
+Regole di contrasto e testo:
+
+- **Testo Principale:** Grigio scuro (`#212121`) per le pagine con sfondo chiaro (Arctic Foam/Stardust White).
+- **Testo su Dark Mode**: Bianco puro (`#FFFFFF`) per le pagine con sfondo scuro (Midnight Trench/Deep Nebula).
+
+Gerarchia Blu e Viola:
+
+- Colori Primari (Base del brand): La scala dei Blu. Il _Whale Street Blue_ (`#466F9D`) è il colore principale per i titoli importanti e il branding generale.
+- Colori Secondari/Accento (Elementi speciali):** La scala dei Viola. Il _Royal Anchor_ (`#523EB2`) e l'_Electric Amethyst_ (`#8A64FF`) vengono usati **solo** per evidenziare elementi specifici, come ad esempio i badge delle funzionalità AI, i bottoni secondari o elementi grafici che devono risaltare.
 
 ### Font ed impostazioni
 

@@ -25,9 +25,9 @@ Nel dettaglio l’AI verrà utilizzata prevalentemente in questi modi:
 
 - Costruzioni di applicativi personalizzati che creano piani di trading, piani di risparmio, piano di spesa. Il tutto su misura per lo studente.
 - ChatBOT e piattaforme di studio che si basano sulle nostre fonti per insegnarti ciò che c’è da sapere e creano contenuti multimediali in tempo reale (slide, video, podcast).
-  - Il primo caso di utilizzo è quello di utilizzare NotebookLM (chatbot) che integri le nostre fonti e generare diversi podcast \ video riassuntivi dei singoli temi trattati.
-  - Più avanti creeremo una piattaforma proprietaria nella quale sarà lo studente a crearsi il materiale didattico che preferisce, noi forniremo le fonti affidabili e lui sarà libero di studiare come vuole.
-  - Infine la piattaforma sarà in grado anche di fornire applicativi sul momento in base alle necessità dello studente.
+    - Il primo caso di utilizzo è quello di utilizzare NotebookLM (chatbot) che integri le nostre fonti e generare diversi podcast \ video riassuntivi dei singoli temi trattati.
+    - Più avanti creeremo una piattaforma proprietaria nella quale sarà lo studente a crearsi il materiale didattico che preferisce, noi forniremo le fonti affidabili e lui sarà libero di studiare come vuole.
+    - Infine la piattaforma sarà in grado anche di fornire applicativi sul momento in base alle necessità dello studente.
 
 ---
 
@@ -41,5 +41,3 @@ Durante il percorso privato il cliente avrà accesso a:
 
 - Chiamata settimanale con Marco o Mattia (le call saranno divise in 50 - 50)
 - Chat privata 24/7 con Marco e Mattia
-
-Il costo è ancora da definire ma sarà intorno alle 200€ l'ora.
