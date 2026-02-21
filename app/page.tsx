@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -95,11 +96,14 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="aspect-[4/3] rounded-2xl bg-background-dark-alt dark:bg-[#0A1A29] border border-primary/20 dark:border-accent/20 flex items-center justify-center p-8">
-                <p className="text-center text-text-dark/60 font-sans text-sm leading-relaxed">
-                  [Placeholder: Interfaccia trading pulita su MacBook in
-                  ambiente elegante]
-                </p>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-primary/20 dark:border-accent/20">
+                <Image
+                  src="/IMG/Home_Computer.png"
+                  alt="Interfaccia trading su MacBook in ambiente elegante"
+                  width={488}
+                  height={366}
+                  className="h-full w-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -245,7 +249,7 @@ export default function Home() {
               {
                 icon: KeyRound,
                 title: "Chiavi private e errori operativi",
-                text: "Circa il 20% di tutti i Bitcoin esistenti risulta perso per sempre: le chiavi non si recuperano. Un indirizzo sbagliato o una rete errata rendono i fondi irrecuperabili. La sicurezza della custodia e protocolli operativi precisi dipendono da te.",
+                text: "Chiavi perse o indirizzi sbagliati rendono i fondi irrecuperabili. La custodia sicura e protocolli operativi precisi dipendono da te.",
               },
               {
                 icon: ShieldAlert,
@@ -502,14 +506,6 @@ export default function Home() {
                 accompagniamo a partire da allocazioni piccole ma strategiche,
                 costruendo competenza e fiducia passo dopo passo.
               </p>
-
-              {/* Placeholder */}
-              <div className="aspect-[16/9] rounded-xl bg-background-dark-alt dark:bg-[#0A1A29] border border-primary/20 dark:border-accent/20 flex items-center justify-center p-6 mt-4">
-                <p className="text-center text-text-dark/60 font-sans text-sm">
-                  [Placeholder: Ritratti professionali dei founder Marco e
-                  Mattia in ambiente ufficio moderno]
-                </p>
-              </div>
             </motion.div>
 
             {/* Pilastro 2 */}
@@ -538,14 +534,6 @@ export default function Home() {
                 costruiti per il singolo cliente. Non tool generici: strumenti
                 su misura per le tue esigenze specifiche.
               </p>
-
-              {/* Placeholder */}
-              <div className="aspect-[16/9] rounded-xl bg-background-dark-alt dark:bg-[#0A1A29] border border-secondary/20 dark:border-accent-purple/20 flex items-center justify-center p-6 mt-4">
-                <p className="text-center text-text-dark/60 font-sans text-sm">
-                  [Placeholder: Grafico Bitcoin con sovrapposizione di nodi
-                  neurali AI]
-                </p>
-              </div>
             </motion.div>
           </div>
         </div>
