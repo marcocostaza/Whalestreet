@@ -25,10 +25,22 @@ export default function Footer() {
           </Link>
 
           {/* Disclaimer legale */}
-          <p className="text-sm text-text-primary/60 dark:text-text-dark/60 max-w-2xl leading-relaxed">
-            WhaleStreet offre educazione operativa e tutoring. Non forniamo consulenza
-            finanziaria abusiva n&eacute; consigli di investimento personalizzati su singoli strumenti.
-          </p>
+          <div className="max-w-3xl space-y-3">
+            <p className="text-sm text-text-primary/60 dark:text-text-dark/60 leading-relaxed">
+              WhaleStreet offre esclusivamente servizi di formazione, tutoring
+              operativo e supporto tecnico-educativo nel settore Bitcoin e asset
+              digitali. Non forniamo consulenza finanziaria, non gestiamo capitali
+              di terzi e non formuliamo raccomandazioni personalizzate di
+              investimento.
+            </p>
+            <p className="text-xs text-text-primary/40 dark:text-text-dark/40 leading-relaxed">
+              Le informazioni presenti su questo sito hanno scopo puramente
+              didattico e informativo e non costituiscono sollecitazione al
+              pubblico risparmio ai sensi del TUF (D.Lgs. 58/1998). Per
+              consulenza finanziaria personalizzata, rivolgiti a un consulente
+              abilitato e iscritto all&apos;Albo OCF.
+            </p>
+          </div>
 
           {/* Link legali */}
           <div className="flex items-center gap-6 text-sm">
@@ -38,7 +50,9 @@ export default function Footer() {
             >
               Privacy Policy
             </Link>
-            <span className="text-text-primary/30 dark:text-text-dark/30">|</span>
+            <span className="text-text-primary/30 dark:text-text-dark/30">
+              |
+            </span>
             <Link
               href="/terms"
               className="text-text-primary/50 dark:text-text-dark/50 hover:text-primary dark:hover:text-accent transition-colors"
@@ -49,7 +63,8 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-xs text-text-primary/40 dark:text-text-dark/40">
-            &copy; {new Date().getFullYear()} WhaleStreet. Tutti i diritti riservati.
+            &copy; {new Date().getFullYear()} WhaleStreet. Tutti i diritti
+            riservati.
           </p>
         </div>
       </div>

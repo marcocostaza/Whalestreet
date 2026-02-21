@@ -20,25 +20,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WhaleStreet – Protezione e Rendimento per Capitali Importanti",
+  title: "WhaleStreet – Formazione Premium su Bitcoin e Asset Digitali",
   description:
-    "Boutique di consulenza sartoriale 1-to-1 e tutoring operativo su Bitcoin e Asset Digitali per HNWI e Tesorerie Aziendali. Oltre il sistema bancario.",
+    "Formazione e tutoring operativo 1-to-1 su Bitcoin e Asset Digitali per professionisti e aziende. Impara a proteggere il tuo patrimonio, operare in autonomia e comprendere i mercati crypto.",
   keywords: [
-    "bitcoin",
-    "asset allocation",
-    "HNWI",
-    "consulenza bitcoin",
-    "corporate treasury",
+    "formazione bitcoin",
+    "tutoring crypto",
+    "bitcoin italia",
     "self-custody",
-    "protezione capitale",
-    "tutoring bitcoin",
-    "high net worth",
+    "asset digitali",
+    "corporate treasury bitcoin",
+    "formazione crypto professionale",
+    "bitcoin per aziende",
   ],
   authors: [{ name: "WhaleStreet" }],
   openGraph: {
-    title: "WhaleStreet – Protezione e Rendimento per Capitali Importanti",
+    title: "WhaleStreet – Formazione Premium su Bitcoin e Asset Digitali",
     description:
-      "Boutique di consulenza sartoriale 1-to-1 su Bitcoin e Asset Digitali per HNWI e Tesorerie Aziendali.",
+      "Formazione e tutoring operativo 1-to-1 su Bitcoin e Asset Digitali per professionisti e aziende.",
     type: "website",
     locale: "it_IT",
     url: "https://whalestreet.website",
