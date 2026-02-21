@@ -1,0 +1,30 @@
+# Formattazione pagine task Notion (Task Whale Street)
+
+Quando crei o aggiorni il **contenuto** di una pagina task nel database Task Whale Street (o pagine analoghe in Notion), usa sempre questa struttura per leggibilità e gerarchia chiara.
+
+## Struttura obbligatoria
+
+1. **Titoli di sezione** → blocchi **heading_1** (non paragraph in grassetto, non quote).
+   - Esempi: "Obiettivo", "Perché", "Come procedere", "Note".
+2. **Testo sotto ogni titolo** → **paragraph**.
+3. **Lista di passi / to-do** → blocchi **to_do** (checkbox), non bulleted_list_item.
+   - Ogni passo = un blocco `to_do` con `checked: false` (l’utente le spunta in Notion).
+4. **Sotto-sezioni** (se servono) → **heading_2** sotto un heading_1.
+
+## Ordine consigliato
+
+- **Obiettivo** (heading_1) + paragrafo che spiega il risultato atteso.
+- **Perché** (heading_1) + paragrafo che spiega motivazione/contesto.
+- **Come procedere** (heading_1) + sequenza di blocchi to_do (checkbox).
+- Eventuali **Note** o **Criteri di done** (heading_1 o heading_2) + paragrafo o to_do.
+
+## Tipi blocco da usare (API Notion)
+
+- `heading_1` / `heading_2` per titoli e sotto-titoli.
+- `paragraph` per il corpo (rich_text).
+- `to_do` per i passi azionabili (checkbox).
+- Evitare: solo `paragraph` per i titoli, `bulleted_list_item` per i todo (preferire sempre to_do).
+
+## Riferimento
+
+Esempio di pagina già formattata: [Sito vetrina whalestreet.website](https://www.notion.so/marcocostanza/Sito-vetrina-whalestreet-website-messaggio-boutique-nessun-carrello-30e2f9775b3f8162a8b7fd5db9538dd8).
