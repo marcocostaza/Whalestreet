@@ -1,98 +1,70 @@
 import Link from "next/link";
-import { Youtube, Instagram, Send } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border dark:border-border bg-background-light dark:bg-background-dark">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand */}
-          <div>
-            <h3 className="text-lg font-heading font-bold text-primary dark:text-accent mb-4">
-              WhaleStreet
-            </h3>
-            <p className="text-sm text-text-primary/70 dark:text-text-dark/70">
-              Il tuo faro nella navigazione verso l&apos;indipendenza finanziaria
-              attraverso formazione avanzata potenziata dall&apos;Intelligenza
-              Artificiale.
+        <div className="flex flex-col items-center text-center space-y-6">
+          {/* Logo */}
+          <Link href="/" className="inline-block">
+            <Image
+              src="/images/WhaleStreet_Logo_Colored.png"
+              alt="WhaleStreet Logo"
+              width={140}
+              height={46}
+              className="h-10 w-auto dark:hidden"
+            />
+            <Image
+              src="/images/WhaleStreet_Logo_White.png"
+              alt="WhaleStreet Logo"
+              width={140}
+              height={46}
+              className="h-10 w-auto hidden dark:block"
+            />
+          </Link>
+
+          {/* Disclaimer legale */}
+          <div className="max-w-3xl space-y-3">
+            <p className="text-sm text-text-primary/60 dark:text-text-dark/60 leading-relaxed">
+              WhaleStreet offre esclusivamente servizi di formazione, tutoring
+              operativo e supporto tecnico-educativo nel settore Bitcoin e asset
+              digitali. Non forniamo consulenza finanziaria, non gestiamo capitali
+              di terzi e non formuliamo raccomandazioni personalizzate di
+              investimento.
+            </p>
+            <p className="text-xs text-text-primary/40 dark:text-text-dark/40 leading-relaxed">
+              Le informazioni presenti su questo sito hanno scopo puramente
+              didattico e informativo e non costituiscono sollecitazione al
+              pubblico risparmio ai sensi del TUF (D.Lgs. 58/1998). Per
+              consulenza finanziaria personalizzata, rivolgiti a un consulente
+              abilitato e iscritto all&apos;Albo OCF.
             </p>
           </div>
 
-          {/* Links */}
-          <div>
-            <h4 className="text-sm font-heading font-semibold text-text-primary dark:text-text-dark mb-4">
-              Navigazione
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/academy"
-                  className="text-sm text-text-primary/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-accent transition-colors"
-                >
-                  Academy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/roadmap"
-                  className="text-sm text-text-primary/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-accent transition-colors"
-                >
-                  Roadmap
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/report-gratuito"
-                  className="text-sm text-text-primary/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-accent transition-colors"
-                >
-                  Report Gratuito
-                </Link>
-              </li>
-            </ul>
+          {/* Link legali */}
+          <div className="flex items-center gap-6 text-sm">
+            <Link
+              href="/privacy-policy"
+              className="text-text-primary/50 dark:text-text-dark/50 hover:text-primary dark:hover:text-accent transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-text-primary/30 dark:text-text-dark/30">
+              |
+            </span>
+            <Link
+              href="/terms"
+              className="text-text-primary/50 dark:text-text-dark/50 hover:text-primary dark:hover:text-accent transition-colors"
+            >
+              Terms of Service
+            </Link>
           </div>
 
-          {/* Social */}
-          <div>
-            <h4 className="text-sm font-heading font-semibold text-text-primary dark:text-text-dark mb-4">
-              Seguici
-            </h4>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.youtube.com/@WhaleStreetAcademy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-primary/70 dark:text-text-dark/70 hover:text-accent transition-colors"
-                aria-label="YouTube WhaleStreet Academy"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/whalestreet.academy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-primary/70 dark:text-text-dark/70 hover:text-accent transition-colors"
-                aria-label="Instagram WhaleStreet Academy"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://t.me/whalestreet_official"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-primary/70 dark:text-text-dark/70 hover:text-accent transition-colors"
-                aria-label="Telegram WhaleStreet"
-              >
-                <Send className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Legal */}
-        <div className="mt-8 pt-8 border-t border-border dark:border-border">
-          <p className="text-xs text-text-primary/50 dark:text-text-dark/50 text-center">
-            Note legali e disclaimer: i contenuti sono a scopo informativo.
-            Nessuna consulenza finanziaria. Investi con consapevolezza.
+          {/* Copyright */}
+          <p className="text-xs text-text-primary/40 dark:text-text-dark/40">
+            &copy; {new Date().getFullYear()} WhaleStreet. Tutti i diritti
+            riservati.
           </p>
         </div>
       </div>

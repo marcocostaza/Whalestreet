@@ -20,25 +20,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WhaleStreet – Il Tuo Faro verso l'Indipendenza Finanziaria",
+  title: "WhaleStreet – Formazione Premium su Bitcoin e Asset Digitali",
   description:
-    "WhaleStreet è un'accademia formativa italiana verticale nel comparto Crypto. Formazione avanzata potenziata dall'Intelligenza Artificiale per investimenti consapevoli su Bitcoin e Cryptovalute.",
+    "Formazione e tutoring operativo 1-to-1 su Bitcoin e Asset Digitali per professionisti e aziende. Impara a proteggere il tuo patrimonio, operare in autonomia e comprendere i mercati crypto.",
   keywords: [
-    "crypto",
-    "bitcoin",
-    "trading",
-    "formazione",
-    "intelligenza artificiale",
-    "investimenti",
-    "finanza",
+    "formazione bitcoin",
+    "tutoring crypto",
+    "bitcoin italia",
+    "self-custody",
+    "asset digitali",
+    "corporate treasury bitcoin",
+    "formazione crypto professionale",
+    "bitcoin per aziende",
   ],
   authors: [{ name: "WhaleStreet" }],
   openGraph: {
-    title: "WhaleStreet – Accademia Crypto/AI",
+    title: "WhaleStreet – Formazione Premium su Bitcoin e Asset Digitali",
     description:
-      "Formazione avanzata su Bitcoin e Crypto potenziata dall'Intelligenza Artificiale",
+      "Formazione e tutoring operativo 1-to-1 su Bitcoin e Asset Digitali per professionisti e aziende.",
     type: "website",
     locale: "it_IT",
+    url: "https://whalestreet.website",
   },
 };
 
