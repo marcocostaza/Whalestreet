@@ -122,34 +122,41 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center text-white/60 mb-14 max-w-3xl mx-auto text-lg leading-relaxed"
+            className="text-center text-white/60 mb-2 max-w-3xl mx-auto text-lg leading-relaxed"
           >
             Le pi&ugrave; grandi istituzioni finanziarie del mondo hanno preso
             posizione. Ignorare la migliore asset class dell&apos;ultimo
             decennio non &egrave; prudenza, &egrave; un rischio certo.
           </motion.p>
+          <p className="text-center text-white/40 text-sm mb-14">
+            Dati aggiornati a Febbraio 2026.
+          </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: Landmark,
-                title: "BlackRock IBIT",
-                stat: "$50B+ AUM",
+                title: "Assorbimento Istituzionale",
+                stat: "1.3+ Milioni di BTC ($130B+ AUM)",
+                text: "Oltre 1.3 Milioni di BTC assorbiti. I fondi ETF globali gestiscono oggi più di 130 miliardi di dollari, rendendo Bitcoin l'asset con la più rapida adozione istituzionale della storia.",
               },
               {
                 icon: TrendingUp,
-                title: "Bitcoin Treasury",
-                stat: "252.000+ BTC",
+                title: "Corporate Standard",
+                stat: "1.1+ Milioni di BTC nei bilanci",
+                text: "Oltre 1.1 Milioni di BTC nelle tesorerie aziendali. Dalla Silicon Valley al Giappone, le aziende pubbliche e private hanno trasformato Bitcoin nel nuovo standard di riserva per le tesorerie.",
               },
               {
                 icon: Building2,
-                title: "Fondi Pensione e Banche",
-                stat: "Adozione globale",
+                title: "Integrazione Sistemica",
+                stat: "$50B+ dal risparmio gestito",
+                text: "Il futuro del risparmio generazionale. Con oltre 50 miliardi di dollari di allocazione globale, i grandi fondi pensione e le banche d'affari hanno reso Bitcoin un pilastro dei portafogli tradizionali.",
               },
               {
                 icon: Globe,
-                title: "Governi e Riserve",
-                stat: "Riserve strategiche",
+                title: "Riserve Geopolitiche",
+                stat: "~600.000 BTC detenuti dagli Stati",
+                text: "L'Oro Digitale degli Stati sovrani. Con circa 600.000 BTC detenuti a livello globale, governi e nazioni hanno ufficialmente integrato Bitcoin nelle loro riserve strategiche.",
               },
             ].map((item, i) => (
               <motion.div
@@ -158,15 +165,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-xl bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.08] transition-colors flex flex-col items-center text-center"
+                className="rounded-xl bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.08] transition-colors"
               >
-                <item.icon className="w-12 h-12 text-accent mb-4" aria-hidden />
+                <item.icon className="w-10 h-10 text-accent mb-3" aria-hidden />
                 <p className="text-xs text-accent font-bold uppercase tracking-wider mb-1">
                   {item.stat}
                 </p>
-                <h4 className="font-heading font-bold text-white">
+                <h4 className="font-heading font-bold text-white mb-2">
                   {item.title}
                 </h4>
+                <p className="text-sm text-white/55 leading-relaxed">
+                  {item.text}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -216,7 +226,7 @@ export default function Home() {
             {...fadeInView}
             className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-center mb-4 text-text-primary dark:text-text-dark"
           >
-            Il costo di non agire o di farlo senza conoscenza
+            Il costo di non agire e di farlo senza conoscenza
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -234,18 +244,13 @@ export default function Home() {
             {[
               {
                 icon: KeyRound,
-                title: "Chiavi private perse",
-                text: "Circa il 20% di tutti i Bitcoin esistenti risulta perso per sempre. Le chiavi non si recuperano. La sicurezza della custodia dipende da te.",
+                title: "Chiavi private e errori operativi",
+                text: "Circa il 20% di tutti i Bitcoin esistenti risulta perso per sempre: le chiavi non si recuperano. Un indirizzo sbagliato o una rete errata rendono i fondi irrecuperabili. La sicurezza della custodia e protocolli operativi precisi dipendono da te.",
               },
               {
                 icon: ShieldAlert,
                 title: "Truffe, phishing e sicurezza",
                 text: "Miliardi persi ogni anno in scam. Senza le competenze giuste si è esposti. Privacy e sicurezza dei dati vanno protette con metodo.",
-              },
-              {
-                icon: Ban,
-                title: "Errori operativi",
-                text: "Un indirizzo sbagliato, una rete errata: fondi irrecuperabili. Servono protocolli operativi precisi e consapevolezza dei rischi.",
               },
               {
                 icon: Receipt,
@@ -339,10 +344,10 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground">
-                    Affiancamento 1-to-1 su chat privata. Nessun corso di
-                    gruppo: tutoring operativo diretto per comprendere i
-                    mercati, ragionare sulle strategie e operare in piena
-                    autonomia.
+                    Affiancamento 1-to-1 su chat privata, videochiamate e
+                    webinar privati. Nessun corso di gruppo: tutoring operativo
+                    diretto per comprendere i mercati, ragionare sulle strategie
+                    e operare in piena autonomia.
                   </p>
                 </CardContent>
               </Card>
@@ -424,19 +429,21 @@ export default function Home() {
                 <p className="text-base leading-relaxed text-muted-foreground dark:text-muted-foreground mb-4">
                   Oltre alla formazione tecnica, ti supportiamo sulla parte
                   fiscale relativa alla dichiarazione di cripto-attivit&agrave;.
-                  Per chi necessita di consulenza finanziaria personalizzata,
-                  abbiamo una rete di partner:{" "}
+                  Abbiamo una rete di partner per un supporto a 360&deg;:{" "}
                   <strong className="text-foreground dark:text-foreground">
-                    consulenti finanziari abilitati e iscritti all&apos;Albo
-                    OCF
+                    commercialisti
+                  </strong>
+                  {" "}e{" "}
+                  <strong className="text-foreground dark:text-foreground">
+                    consulenti finanziari abilitati e iscritti all&apos;Albo OCF
                   </strong>
                   , indipendenti dal nostro servizio di formazione.
                 </p>
                 <p className="text-sm text-muted-foreground dark:text-muted-foreground italic">
                   WhaleStreet si occupa esclusivamente di formazione e
-                  tutoring. La consulenza finanziaria personalizzata &egrave;
-                  erogata da professionisti terzi abilitati, con contratti e
-                  pagamenti separati.
+                  tutoring. Consulenza fiscale e finanziaria personalizzata
+                  &egrave; erogata da professionisti terzi abilitati, con
+                  contratti e pagamenti separati.
                 </p>
               </div>
             </div>

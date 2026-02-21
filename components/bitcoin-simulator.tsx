@@ -96,7 +96,7 @@ export default function BitcoinSimulator() {
   const [totalCapital, setTotalCapital] = useState(200000);
   const [allocation, setAllocation] = useState(5);
   const [entryYear, setEntryYear] = useState(2020);
-  const [bondPct, setBondPct] = useState(40); // % obbligazioni nel portafoglio tradizionale
+  const bondPct = 40; // % obbligazioni nel portafoglio tradizionale (fisso)
   const equityPct = 100 - bondPct;
 
   const result = useMemo(() => {
@@ -155,7 +155,7 @@ export default function BitcoinSimulator() {
       btcWeightNow,
       yearsElapsed,
     };
-  }, [totalCapital, allocation, entryYear, bondPct, equityPct]);
+  }, [totalCapital, allocation, entryYear]);
 
   const years = Object.keys(BTC_PRICES_EUR).map(Number);
   const allocations = [1, 3, 5, 10];
@@ -240,27 +240,6 @@ export default function BitcoinSimulator() {
             </div>
           </div>
 
-          {/* % Obbligazioni portafoglio tradizionale (MSCI + bonds) */}
-          <div>
-            <label className="block text-sm font-medium text-white/60 mb-2">
-              Portafoglio tradizionale: % obbligazioni (resto MSCI ACWI)
-            </label>
-            <div className="flex gap-2">
-              {[0, 20, 40, 60, 80, 100].map((pct) => (
-                <button
-                  key={pct}
-                  onClick={() => setBondPct(pct)}
-                  className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 ${
-                    bondPct === pct
-                      ? "bg-[#3B95D9] text-white shadow-[0_0_20px_-5px_rgba(59,149,217,0.4)]"
-                      : "bg-white/10 text-white/50 hover:bg-white/15 hover:text-white/70"
-                  }`}
-                >
-                  {pct}%
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
@@ -326,8 +305,7 @@ export default function BitcoinSimulator() {
             <div className="mt-4 pt-4 border-t border-white/10">
               <p className="text-sm text-white/40">
                 Dati storici reali: MSCI ACWI (azioni globali) e indice
-                obbligazionario globale. Composizione: {100 - bondPct}% azioni /{" "}
-                {bondPct}% obbligazioni.
+                obbligazionario globale (portafoglio bilanciato).
               </p>
             </div>
           </div>
