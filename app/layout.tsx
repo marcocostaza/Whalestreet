@@ -65,6 +65,11 @@ export default function RootLayout({
             `,
           }}
         />
+        <link
+          rel="stylesheet"
+          href="https://sibforms.com/forms/end-form/build/sib-styles.css"
+        />
+        <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
       </head>
       <body>
         <ThemeProvider>
@@ -72,6 +77,20 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+              window.LOCALE = 'en';
+              window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Si prega di rivedere il formato del campo e riprovare.";
+              window.REQUIRED_ERROR_MESSAGE = "Questo campo non può essere lasciato vuoto. ";
+              window.GENERIC_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Si prega di rivedere il formato del campo e riprovare.";
+              window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected', selectedOption: '{quantity} selected', selectedOptions: '{quantity} selected' } };
+              var AUTOHIDE = Boolean(1);
+            `,
+          }}
+        />
+        <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
       </body>
     </html>
   );

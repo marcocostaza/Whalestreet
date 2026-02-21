@@ -33,7 +33,7 @@ export default function Navbar() {
           {/* CTA + Theme Toggle */}
           <div className="flex items-center space-x-3">
             <Button variant="accent" size="sm" asChild>
-              <Link href="#applica">Applica ora</Link>
+              <Link href="#newsletter">Iscriviti alla newsletter</Link>
             </Button>
             <ThemeToggle />
           </div>

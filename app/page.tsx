@@ -81,8 +81,8 @@ export default function Home() {
                   className="text-base px-8 py-6"
                   asChild
                 >
-                  <Link href="#applica">
-                    Prenota una chiamata conoscitiva gratuita
+                  <Link href="#newsletter">
+                    Iscriviti alla newsletter
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -540,75 +540,233 @@ export default function Home() {
       </section>
 
       {/* ============================================= */}
-      {/* SEZIONE G: CTA FINALE */}
+      {/* SEZIONE G: NEWSLETTER */}
       {/* ============================================= */}
       <section
-        id="applica"
-        className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1E1636] dark:bg-[#1E1636] relative overflow-hidden"
+        id="newsletter"
+        className="pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-border dark:border-border bg-background-light dark:bg-background-dark"
+        aria-label="Newsletter"
       >
-        {/* Glow decorativo */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-purple/10 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="relative max-w-3xl mx-auto text-center">
-          <motion.h2
-            {...fadeInView}
-            className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white mb-6"
-          >
-            Pronto ad affacciarti a questo mercato con criterio?
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg sm:text-xl text-white/80 mb-4 leading-relaxed"
-          >
-            Lavoriamo solo con un numero selezionato di clienti per garantire
-            un affiancamento reale e personalizzato.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-base text-white/60 mb-10 leading-relaxed"
-          >
-            Compila il breve questionario per capire se il nostro percorso
-            formativo &egrave; adatto alle tue esigenze e sbloccare il
-            calendario per una Discovery Call gratuita.
-          </motion.p>
-
+        <div className="max-w-xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
           >
-            <Button
-              variant="accent"
-              size="lg"
-              className="text-base sm:text-lg px-10 py-7 shadow-glow hover:shadow-[0_0_80px_-15px_rgba(59,149,217,0.5)] transition-shadow duration-300"
-              asChild
-            >
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                Inizia il Questionario
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-text-primary dark:text-text-dark">
+              Resta aggiornato
+            </h2>
+            <p className="text-text-primary/70 dark:text-text-dark/70">
+              Ricevi analisi, guide operative e approfondimenti.
+            </p>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 text-sm text-white/40"
-          >
-            Tempo stimato: 2 minuti. Nessun dato finanziario richiesto. I tuoi
-            dati sono trattati con massima riservatezza.
-          </motion.p>
+          <div className="sib-form" style={{ textAlign: "center" }}>
+            <div
+              id="sib-container"
+              className="sib-container--large sib-container--vertical"
+              style={{
+                textAlign: "center",
+                maxWidth: "540px",
+                margin: "0 auto",
+                direction: "ltr",
+                borderRadius: "1.25rem",
+                border: "1px solid rgba(220, 233, 242, 0.5)",
+                background: "rgba(255, 255, 255, 0.96)",
+                boxShadow: "0 4px 24px rgba(0, 0, 0, 0.15)",
+                overflow: "hidden",
+                padding: "1.5rem",
+              }}
+            >
+              <form
+                id="sib-form"
+                method="POST"
+                action="https://8b8e18d7.sibforms.com/serve/MUIFAFIuxtZsDR3Ol5BAtSxYNIxPcwo0DyFFNhqRjFdYll_o0dig1t4C-8k2XY1yBMhHEY-9thETBvdOx_Lx2j9n-uaQZVa6zrv1f-HikKsi6iivVeIyJBLawxZrE2L0rXawT-SSj_k829cjq-Tv5WVIxCWJAYv5MWgPyjR1O20X9JMO3OqotqV0OKnfiINMqT9ljfniiaKUgSjJ7w=="
+                data-type="subscription"
+              >
+                <div style={{ padding: "8px 0" }}>
+                  <div
+                    className="sib-form-block"
+                    style={{
+                      fontSize: "32px",
+                      textAlign: "left",
+                      fontWeight: "700",
+                      fontFamily: "var(--font-inter), Helvetica, sans-serif",
+                      color: "#3C4858",
+                      background: "transparent",
+                    }}
+                  >
+                    <p>Resta aggiornato</p>
+                  </div>
+                </div>
+                <div style={{ padding: "8px 0" }}>
+                  <div
+                    className="sib-form-block"
+                    style={{
+                      fontSize: "16px",
+                      textAlign: "left",
+                      fontFamily: "var(--font-inter), Helvetica, sans-serif",
+                      color: "#3C4858",
+                      background: "transparent",
+                    }}
+                  >
+                    <div className="sib-text-form-block">
+                      <p>Ricevi analisi, guide operative e approfondimenti.</p>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ padding: "8px 0" }}>
+                  <div className="sib-input sib-form-block">
+                    <div className="form__entry entry_block">
+                      <div className="form__label-row">
+                        <div className="entry__field">
+                          <input
+                            className="input"
+                            type="text"
+                            id="EMAIL"
+                            name="EMAIL"
+                            autoComplete="off"
+                            placeholder="EMAIL"
+                            data-required="true"
+                            required
+                            style={{
+                              borderRadius: "0.75rem",
+                              padding: "0.75rem",
+                              border: "1px solid #DCE9F2",
+                              width: "100%",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ padding: "8px 0" }}>
+                  <div className="sib-checkbox-group sib-form-block" data-required="true">
+                    <div className="form__entry entry_mcq">
+                      <div className="form__label-row">
+                        <label
+                          className="entry__label"
+                          style={{
+                            fontWeight: "700",
+                            textAlign: "left",
+                            fontSize: "16px",
+                            fontFamily: "var(--font-inter), Helvetica, sans-serif",
+                            color: "#3c4858",
+                          }}
+                          data-required="*"
+                        >
+                          Seleziona le e-mail che ti piacerebbe ricevere
+                        </label>
+                        <div>
+                          <div className="entry__choice">
+                            <label className="checkbox__label">
+                              <input
+                                type="checkbox"
+                                className="input_replaced"
+                                name="TIPOLOGIA_DI_NEWS[]"
+                                data-value="🎓 Guide e approfondimenti"
+                                value="🎓 Guide e approfondimenti"
+                                data-required="true"
+                              />
+                              <span className="checkbox checkbox_tick_positive"></span>
+                              <span style={{ fontSize: "16px", textAlign: "left", fontFamily: "var(--font-inter), Helvetica, sans-serif", color: "#3C4858" }}>
+                                🎓 Guide e approfondimenti
+                              </span>
+                            </label>
+                          </div>
+                          <div className="entry__choice">
+                            <label className="checkbox__label">
+                              <input
+                                type="checkbox"
+                                className="input_replaced"
+                                name="TIPOLOGIA_DI_NEWS[]"
+                                data-value="🎁 Offerte, sconti e bonus"
+                                value="🎁 Offerte, sconti e bonus"
+                                data-required="true"
+                              />
+                              <span className="checkbox checkbox_tick_positive"></span>
+                              <span style={{ fontSize: "16px", textAlign: "left", fontFamily: "var(--font-inter), Helvetica, sans-serif", color: "#3C4858" }}>
+                                🎁 Offerte, sconti e bonus
+                              </span>
+                            </label>
+                          </div>
+                          <div className="entry__choice">
+                            <label className="checkbox__label">
+                              <input
+                                type="checkbox"
+                                className="input_replaced"
+                                name="TIPOLOGIA_DI_NEWS[]"
+                                data-value="📰 News e consigli di attualità"
+                                value="📰 News e consigli di attualità"
+                                data-required="true"
+                              />
+                              <span className="checkbox checkbox_tick_positive"></span>
+                              <span style={{ fontSize: "16px", textAlign: "left", fontFamily: "var(--font-inter), Helvetica, sans-serif", color: "#3C4858" }}>
+                                📰 News e consigli di attualità
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ padding: "8px 0" }}>
+                  <div className="sib-optin sib-form-block" data-required="true">
+                    <div className="form__entry entry_mcq">
+                      <div className="form__label-row">
+                        <div className="entry__choice">
+                          <label>
+                            <input type="checkbox" className="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                            <span className="checkbox checkbox_tick_positive"></span>
+                            <span style={{ fontSize: "14px", textAlign: "left", fontFamily: "var(--font-inter), Helvetica, sans-serif", color: "#3C4858" }}>
+                              <p>Accetto l&apos;informativa sulla privacy dei dati.</p>
+                              <span data-required="*" style={{ display: "inline" }}></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <label className="entry__specification" style={{ fontSize: "12px", textAlign: "left", fontFamily: "var(--font-inter), Helvetica, sans-serif", color: "#8390A4" }}>
+                        Puoi annullare l&apos;iscrizione in qualsiasi momento utilizzando il link nella newsletter.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ padding: "8px 0" }}>
+                  <div className="sib-form-block" style={{ textAlign: "left" }}>
+                    <button
+                      className="sib-form-block__button sib-form-block__button-with-loader"
+                      style={{ fontSize: "16px", textAlign: "left", fontWeight: "700", fontFamily: "var(--font-inter), Helvetica, sans-serif", color: "#FFFFFF", background: "#3B95D9", borderRadius: "0.75rem", borderWidth: "0px", padding: "0.75rem 1.5rem", width: "100%", cursor: "pointer" }}
+                      form="sib-form"
+                      type="submit"
+                    >
+                      ISCRIVITI
+                    </button>
+                  </div>
+                </div>
+                <div style={{ padding: "8px 0" }}>
+                  <div className="sib-form__declaration" style={{ direction: "ltr" }}>
+                    <div style={{ fontSize: "14px", textAlign: "left", fontFamily: "var(--font-inter), Helvetica, sans-serif", color: "#687484", background: "transparent" }}>
+                      <p>
+                        We use Brevo as our marketing platform. By submitting this form you agree that the personal data you provided will be transferred to Brevo for processing in accordance with{" "}
+                        <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" rel="noopener noreferrer" style={{ color: "#3B95D9" }}>
+                          Brevo&apos;s Privacy Policy.
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ padding: "8px 0" }}>
+                  <div className="g-recaptcha" data-sitekey="6LeGQVwsAAAAAJfpAc4_DywDxMdzyRxlR8M5hMVr" data-callback="invisibleCaptchaCallback" data-size="invisible"></div>
+                </div>
+                <input type="text" name="email_address_check" value="" className="input--hidden" />
+                <input type="hidden" name="locale" value="en" />
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </div>
