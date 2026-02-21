@@ -3,6 +3,16 @@
 No.: 6
 Status: Done
 
+### Mantra
+
+**Lavoriamo o gratis o pertanto, ma mai per poco.** I contenuti sui social e il lead magnet (report, anteprima lezioni, Oracolo) sono **gratis** e servono a promuovere la boutique e a portare lead qualificati alla Discovery Call. Non vendiamo corsi o report "a poco".
+
+### Ruolo di report, lezioni e AI nel funnel
+
+- **Report (Mattia):** stesso report usato come lead magnet (mail in cambio report completo) e come contenuti social (estratti). Scalabile: un report, molti lead.
+- **Lezioni (Marco):** pillole (1-2 min) sui social, trascrizioni per Oracolo; eventuale minicorso/anteprima gratuito per qualificare. Tutto **gratis** nel funnel.
+- **Oracolo:** risposte coerenti; eventuale "fai una domanda" gratuito per lead. Nessuna vendita "a poco" dell'AI. Tutto porta a Survey → Discovery Call → vendita high-ticket.
+
 ### Quali canali usi per la visibilità?
 
 **Facebook (nuovo, fondamentale):**
@@ -31,14 +41,17 @@ Traffico (Organico / Ads)
     → Vendita High-Ticket al telefono
 ```
 
-**Nessun** lead magnet PDF generico. **Nessuna** automazione email per vendite low-ticket. Solo pre-qualificazione e vendita telefonica.
+**Lead magnet di valore (gratis):** report di Mattia (o estratto) o anteprima da lezioni o "una domanda all'Oracolo" in cambio mail. **Nessuna** vendita low-ticket (no corsi a 29€, no report a 10€). Solo pre-qualificazione e vendita telefonica high-ticket.
 
-### Contenuti da pubblicare
+### Contenuti da pubblicare (tutti gratis, per awareness e funnel)
 
 - Casi studio reali di gestione del rischio (anonimizzati).
 - Differenze tra banche tradizionali e rendimenti crypto (CeFi/DeFi sicura).
 - Sicurezza patrimoniale: self-custody, wallet, gestione operativa.
 - Perché l'ETF Spot non sostituisce la proprietà diretta (yield, self-custody).
+- **Estratti report** (Mattia) e **pillole dalle lezioni** (Marco): riuso degli asset per social e newsletter. CTA verso lead magnet e Survey.
+
+Riferimento: [Boutique_MVP_e_funnel.md](Boutique_MVP_e_funnel.md) per persona, dubbi e dettaglio contenuti.
 
 ### Cosa non fare
 
