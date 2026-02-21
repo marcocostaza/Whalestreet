@@ -33,4 +33,4 @@ Status: Done
 
 ---
 
-**Nota operativa (piano d'azione e task):** Il piano d'azione e le task (Notion e altri database) vanno **allineati** a questa Roadmap: stesso quadro temporale (Q1–Q4) e stessi obiettivi. L'ordine concreto delle attività e le scadenze vanno però definiti con **studio approfondito**: dipendenze, priorità, e vincolo di capacità (~1h/giorno). Le date nelle task vanno calibrate in modo fattibile, non solo in base al trimestre.
+**Nota operativa (piano d'azione e task):** Il piano d'azione e le task (Notion e altri database) vanno **allineati** a questa Roadmap (Q1–Q4). Obiettivo operativo: **go-live inizio marzo** con qualcosa di pronto (sito vetrina + CTA); poi integrazioni, Ads, ecc. Ordine e scadenze si definiscono con **studio approfondito** (dipendenze, priorità); le date vanno ricalibrate per portare al successo, senza vincoli artificiali di ore/giorno.

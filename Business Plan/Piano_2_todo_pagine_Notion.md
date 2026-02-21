@@ -14,17 +14,18 @@ Dopo che il Business Plan V.2 in Notion è identico al repo (Piano 1 completato)
 
 1. **Attesa Piano 1** — Non avviare nessuna creazione di task finché il Piano 1 (sync BP V.2 Notion = Repo) non è completato.
 2. **OK dell’utente** — Quando il Piano 1 è finito, l’utente dà l’OK per passare allo studio.
-3. **Studio approfondito** — Analisi del piano d’azione: lettura **Roadmap** (Q1–Q4), dipendenze, ordine logico, priorità, rischi, **scadenze fattibili** (~1h/giorno). Output: piano d’azione chiaro e motivato.
+3. **Studio approfondito** — Analisi del piano d’azione: lettura **Roadmap** (Q1–Q4), dipendenze, ordine logico, priorità, rischi, **scadenze** orientate al successo (live inizio marzo, poi integrazioni e ads). Output: piano d’azione chiaro e motivato.
 4. **Solo dopo lo studio** — Definire l’elenco preciso di task (con **due date realistiche**) e **solo allora** crearle in Notion; allineare anche gli altri database che servono.
 
 ---
 
-## Roadmap e fattibilità
+## Timeline e obiettivi (ricalibrati)
 
-- **Riferimento**: [Roadmap.md](Business_Plan_2.0/Roadmap.md) — Q1 (Beta + Oracolo), Q2 (Survey Funnel, N8N), Q3 (B2B), Q4 (consolidamento). La Roadmap è il **quadro temporale**, non l'unica fonte di verità: ordine logico e successo del progetto contano quanto le date.
-- **Allineamento**: Piano d'azione e task (Notion e altri database) devono essere **coerenti con la Roadmap**; le scadenze vanno **calibrate** in fase di studio in base a cosa è davvero fattibile.
-- **Vincolo capacità**: ~**1 ora al giorno** al progetto → task in blocchi da ~1h, scadenze realistiche. Lo studio deve produrre un piano **eseguibile** in questo contesto.
-- **Scadenze**: da definire nello studio: cosa serve per Q1–Q4, in che ordine, quante ore/giorni realistici; riflettere le date nelle task Notion (Due Date, eventuali proprietà Quarter/Roadmap).
+- **Oggi**: 21 febbraio — situazione di partenza.
+- **Obiettivo 1 – Inizio marzo**: andare **in live** con qualcosa di pronto (sito vetrina whalestreet.website + messaggio boutique + CTA verso Discovery Call come minimo vitale). Target indicativo: entro i primi giorni di marzo (1–7 marzo).
+- **Obiettivo 2 – Marzo in poi**: integrazioni (Survey pre-qualificazione, sblocco Calendly, lead magnet + form), poi Ads e contenuti social come da Roadmap Q2. Scadenze precise nello studio approfondito.
+- **Minimo vitale per il go-live (inizio marzo)**: sito vetrina whalestreet.website + messaggio boutique + CTA "Prenota una Discovery Call" (Calendly semplice o landing "in arrivo" se Survey non è pronto). Il resto segue dopo il live.
+- **Riferimento Roadmap**: [Roadmap.md](Business_Plan_2.0/Roadmap.md) (Q1–Q4). Piano e task **coerenti** con la Roadmap; date **ricalibrate** per go-live inizio marzo e successo — si fa ciò che serve, il tempo che ci vuole.
 
 ---
 
