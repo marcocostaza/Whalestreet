@@ -12,49 +12,49 @@ Come fai awareness e come converti in clienti.
 **LinkedIn,** perfetto per trovare l'imprenditore o il professionista con capitale ($500k+) che vede Bitcoin come asset class e non come biglietto della lotteria. Pubblico generalmente più adulto ci da anche molta più credibilità.
 
 - **Cosa pubblicare:**
-  - Analisi macroeconomiche e geopolitiche legate a Bitcoin e Crypto.
-  - Reportistica sui risultati dell'Accademia (senza hype, solo numeri e gestione del rischio).
+    - Analisi macroeconomiche e geopolitiche legate a Bitcoin e Crypto.
+    - Reportistica sui risultati dell'Accademia (senza hype, solo numeri e gestione del rischio).
 
 NON pubblichiamo contenuti auto celebrativi fini a sè stessi o ricerche scritte con l’AI che non hanno alcun valore. Restiamo nella semplicità con post chiari, concisi che vanno dritti al punto.
 
 ---
 
-**X,** il social di riferimento per Bitcoin e Crypto. Di solito chi frequenta quel social è già un utente esperto ma proprio per questo possiamo prendere autorevolezza da “colleghi” e partner con i quali collaborare e farci un nome nel settore.
+**X,** il social di riferimento per Bitcoin e Crypto. Di solito chi frequenta quel social è già un utente esperto ma proprio per questo possiamo prendere autorevolezza da “colleghi” e partner con i quali collaborare e farci un nome nel settore. 
 
 - **Cosa pubblicare:**
-  - Analisi in tempo reale sui movimenti di mercato (molto brevi e concisi).
-  - Thread educativi che smontano miti (ottimi per l'affidabilità).
-  - Pezzi di report e spoiler di applicativi che usiamo in Accademia.
+    - Analisi in tempo reale sui movimenti di mercato (molto brevi e concisi).
+    - Thread educativi che smontano miti (ottimi per l'affidabilità).
+    - Pezzi di report e spoiler di applicativi che usiamo in Accademia.
 
 ---
 
-**YouTube** è sicuramente la regina della piattaforme di contenuti.
+**YouTube** è sicuramente la regina della piattaforme di contenuti. 
 
 - **Cosa pubblicare:**
-  - Contenuti formativi più “basici” sfruttando l’AI. Corsi gratuiti che raccontano le basi della finanza personale, dei mercati, dell’operatività in una versione infografica. Ovviamente sempre tutto super professionale.
-  - Commenti di risultati delle nostre precedenti analisi (fatte solo in privato) e mostrare l’operatività a posteriori per mostrare anche gli applicativi e metodologie usate. È un modo per mostrare i risultati degli studenti.
+    - Contenuti formativi più “basici” sfruttando l’AI. Corsi gratuiti che raccontano le basi della finanza personale, dei mercati, dell’operatività in una versione infografica. Ovviamente sempre tutto super professionale.
+    - Commenti di risultati delle nostre precedenti analisi (fatte solo in privato) e mostrare l’operatività a posteriori per mostrare anche gli applicativi e metodologie usate. È un modo per mostrare i risultati degli studenti.
 
 ---
 
 **E-mail**, un ambiente intimo, privo di distrazioni.
 
 - **Cosa pubblicare:**
-  - **Newsletter Settimanale ("The Whale Watch"):** Un recap di valore che mescola analisi umana e output dell'AI. Mettiamo ciò che abbiamo pubblicato durante la settimana negli altri social.
+    - **Newsletter Settimanale ("The Whale Watch"):** Un recap di valore che mescola analisi umana e output dell'AI. Mettiamo ciò che abbiamo pubblicato durante la settimana negli altri social.
 
 ---
 
 **Telegram**, ma che usiamo principalmente per le persone che pagano l’accademia. L’unica integrazione è un canale (non gruppo) che pubblica in automatico tutti i contenuti che pubblichiamo negli altri social.
 
 - **Cosa pubblicare:**
-  - **Canale Pubblico (Broadcast):** Solo news importanti, link ai contenuti degli altri social con breve recap. Serve a tenere calda l'audience gratuita.
-  - **Gruppi Privati (Accademia):** Qui avviene la magia del supporto 24/7.
+    - **Canale Pubblico (Broadcast):** Solo news importanti, link ai contenuti degli altri social con breve recap. Serve a tenere calda l'audience gratuita.
+    - **Gruppi Privati (Accademia):** Qui avviene la magia del supporto 24/7.
 
 ### Che percorso segue il cliente (da contatto a vendita)?
 
 Entrata, la raccolta dei contatti.
 
 - Content marketing (contenuti gratuiti sui social network) nei quali di tanto in tanto ricordiamo di iscriversi alla nostra newsletter.
-- ADS (sponsorizzazioni a pagamento sui social) con i quali invitiamo le persone a lasciare il loro contatto per aderire all’offerta ad hoc, ad un giveaway oppure webinar specifico.
+- ADS (sponsorizzazioni a pagamento sui social) con i quali invitiamo le persone a lasciare il loro contatto per aderire all’offerta ad hoc, ad un  giveaway oppure webinar specifico.
 - Giveaway (da studiare con calma per evitare oneri legali del “concorso a premi”) nel quale distribuiamo un PDF\applicativo in cambio del contatto.
 
 Percorso, una volta ricevuto il contatto, cosa facciamo.

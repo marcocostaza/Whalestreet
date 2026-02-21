@@ -11,7 +11,7 @@ Rispondi alle domande per chiarire dove vuoi arrivare e come ti posizioni oggi.
 
 1. Diventare la principale realtà di riferimento in Italia per formazione operativa crypto.
 2. Offrire un percorso ibrido guidato dai professionisti dell’accademia che integra l'intelligenza artificiale a supporto dello studente, per seguire strategie d’investimento consapevoli e un approccio analitico al mercato.
-3. Include servizio di affiancamento didattico avanzato 1-to-1 per portafogli HNWe realtà aziendali.
+3. Include servizio di affiancamento didattico avanzato 1-to-1 per portafogli HNWI realtà aziendali.
 
 ### Come ti posizioni oggi: qual è il core business?
 

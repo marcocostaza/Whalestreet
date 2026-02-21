@@ -29,6 +29,7 @@ Status: Done
     - Report in “brutta” copia
     - Trovare metodo per standardizzare l’uscita (magari creare pagina web e dare link solo a chi lascia la mail)
 - Rilasciare MVP
+- Introdurre abbonamenti e pagamenti Crypto
 
 ### **Q2: Aprile - Giugno (Integrazione IA & Funnel)**
 
