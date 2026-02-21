@@ -102,8 +102,9 @@ export default function Home() {
                   alt="Interfaccia trading su MacBook in ambiente elegante"
                   width={2400}
                   height={1340}
-                  sizes="(min-width: 1024px) 488px, 90vw"
+                  sizes="(min-width: 1024px) 1200px, 90vw"
                   quality={100}
+                  unoptimized
                   className="h-full w-full object-cover"
                 />
               </div>

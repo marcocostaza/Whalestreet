@@ -155,7 +155,7 @@ export default function BitcoinSimulator() {
       btcWeightNow,
       yearsElapsed,
     };
-  }, [totalCapital, allocation, entryYear]);
+  }, [totalCapital, allocation, entryYear, equityPct, bondPct]);
 
   const years = Object.keys(BTC_PRICES_EUR).map(Number);
   const allocations = [1, 3, 5, 10];
